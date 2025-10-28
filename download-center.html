@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Center - SKYLINE Innovation Software</title>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="rtl-ltr-support.css">
+    <script src="translation-system.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #777;
+            background: linear-gradient(135deg, #151515 0%, #181818 25%, #1A1A1A 50%, #171717 75%, #161616 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding-top: 80px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Heading Colors */
+        h1, h2, h3, h4, h5, h6 {
+            color: #FDF5E6 !important;
+        }
+
+        /* Paragraph Colors */
+        p {
+            color: #777 !important;
+        }
+
+        /* Card Colors - Dark Theme */
+        .service-card, .industry-card, .contact-card, .highlight-card {
+            background: #131313 !important;
+            border: 1px solid rgba(224, 10, 44, 0.2) !important;
+            color: #ffffff !important;
+        }
+        
+        .service-card h3, .industry-card h3, .contact-card h3, .highlight-card h4 {
+            color: #ffffff !important;
+        }
+        
+        .service-card p, .industry-card p, .contact-card p, .highlight-card p {
+            color: #ffffff !important;
+        }
+        
+        .service-card .feature-item, .industry-card .feature-item {
+            color: #E00A2C !important;
+        }
+        
+        .contact-card p {
+            color: #E00A2C !important;
+        }
+
+        /* RTL/LTR Support for Download Center */
+        [dir="rtl"] body {
+            direction: rtl;
+            text-align: right;
+        }
+
+        [dir="ltr"] body {
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Floating Background Shapes */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #8B0000, #A52A2A);
+            border-radius: 50%;
+            animation-duration: 25s;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #000, #333);
+            transform: rotate(45deg);
+            animation-duration: 30s;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #8B0000, #000);
+            border-radius: 30%;
+            animation-duration: 35s;
+            animation-delay: 10s;
+        }
+
+        .shape:nth-child(4) {
+            top: 80%;
+            left: 20%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #A52A2A, #8B0000);
+            border-radius: 50%;
+            animation-duration: 40s;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(15px) rotate(240deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg);
+            }
+        }
+
+        /* Mouse Dust Effect */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #8B0000, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: particleFloat 2s ease-out forwards;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0px) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(0, 0, 0, 0.02) 50%, rgba(220, 38, 38, 0.05) 100%);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+            background: rgba(19, 19, 19, 0.9);
+            padding: 20px 40px;
+            border-radius: 15px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(220, 38, 38, 0.3);
+            max-width: 90%;
+            word-wrap: break-word;
+            animation: slideIn 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 5px rgba(220, 38, 38, 0.2);
+            background: rgba(19, 19, 19, 0.8);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            word-wrap: break-word;
+            animation: slideIn 1s ease-out 0.2s both;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+            animation: slideIn 1s ease-out 0.4s both;
+        }
+
+        /* Download Sections */
+        .download-sections {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .download-section {
+            transition: opacity 0.3s ease, display 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 0 4px 8px rgba(220, 38, 38, 0.2);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+            align-items: stretch;
+            grid-auto-rows: 1fr;
+        }
+
+        .download-card {
+            background: #131313;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 450px;
+            z-index: 1;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(220, 38, 38, 0.6);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+            background: #1a1a1a;
+        }
+
+        .download-card:hover::before {
+            left: 100%;
+        }
+
+        .download-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin: 0 auto 1.2rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .download-card:hover .download-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .download-card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
+
+        .download-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            line-height: 1.3;
+        }
+
+        .download-card p {
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+            text-align: center;
+            flex-grow: 1;
+            min-height: 3.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 1;
+            font-size: 0.9rem;
+        }
+
+        .download-card-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-self: stretch;
+        }
+
+        .download-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.6rem 0.8rem;
+            background: rgba(139, 0, 0, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(139, 0, 0, 0.1);
+            min-height: 2.8rem;
+            height: 2.8rem;
+            flex-shrink: 0;
+        }
+
+        .download-size {
+            font-weight: 600;
+            color: #8B0000;
+            font-size: 0.8rem;
+        }
+
+        .download-meta span:last-child {
+            color: #666;
+            font-size: 0.75rem;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(139, 0, 0, 0.3);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+            height: 48px;
+            min-height: 48px;
+            max-height: 48px;
+            text-align: center;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            align-self: stretch;
+            font-size: 0.9rem;
+        }
+
+        .download-btn:hover {
+            background: #C41E3A;
+            transform: translateY(-2px);
+        }
+
+        .download-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .download-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Ensure perfect card alignment */
+        .download-card > * {
+            flex-shrink: 0;
+        }
+
+        .download-card > p {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #131313;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            border-color: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #131313;
+            border-radius: 20px;
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+        }
+
+        .stat-item p {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .download-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            
+            .download-card {
+                padding: 2rem;
+            }
+            
+            .category-filter {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .download-sections {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .download-card {
+                padding: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-translate="download-hero-title">Download Center</h1>
+                <p data-translate="download-hero-description">Access our comprehensive collection of resources, software, and documentation</p>
+                <div class="hero-badge">
+                    <i class="fas fa-download"></i>
+                    <span data-translate="download-hero-badge">Free Downloads Available</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Sections -->
+        <section class="download-sections">
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all" data-translate="filter-all">All Resources</button>
+                <button class="filter-btn" data-category="brochures" data-translate="filter-brochures">Brochures</button>
+                <button class="filter-btn" data-category="whitepapers" data-translate="filter-whitepapers">Whitepapers</button>
+                <button class="filter-btn" data-category="trials" data-translate="filter-trials">Trial Versions</button>
+                <button class="filter-btn" data-category="demos" data-translate="filter-demos">Demo Software</button>
+            </div>
+
+            <!-- Brochures Section -->
+            <div class="download-section" id="brochures">
+                <h2 class="section-title" data-translate="download-brochures-title">Brochures</h2>
+                <div class="download-grid">
+                    <div class="download-card" data-category="brochures">
+                        <div class="download-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Company Overview</h3>
+                            <p>Comprehensive overview of SKYLINE's services, capabilities, and success stories.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">2.4 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Brochure
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="brochures">
+                        <div class="download-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Software Solutions Catalog</h3>
+                            <p>Detailed catalog of our software products and technical specifications.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">3.1 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Catalog
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="brochures">
+                        <div class="download-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Consulting Services</h3>
+                            <p>Overview of our consulting services and methodology for digital transformation.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">1.8 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Whitepapers Section -->
+            <div class="download-section" id="whitepapers">
+                <h2 class="section-title" data-translate="download-whitepapers-title">Whitepapers</h2>
+                <div class="download-grid">
+                    <div class="download-card" data-category="whitepapers">
+                        <div class="download-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Digital Transformation Best Practices</h3>
+                            <p>Comprehensive guide to successful digital transformation strategies and implementation.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">4.2 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Whitepaper
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="whitepapers">
+                        <div class="download-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Cloud Security Framework</h3>
+                            <p>Advanced security practices and frameworks for cloud-based applications.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">3.7 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Whitepaper
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="whitepapers">
+                        <div class="download-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>AI & Machine Learning Implementation</h3>
+                            <p>Strategic approach to implementing AI and ML solutions in enterprise environments.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">5.1 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Whitepaper
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="whitepapers">
+                        <div class="download-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>DevOps Automation Guide</h3>
+                            <p>Complete guide to implementing DevOps practices and automation tools.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">2.9 MB</span>
+                                <span>PDF Document</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Whitepaper
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trial Versions Section -->
+            <div class="download-section" id="trials">
+                <h2 class="section-title" data-translate="download-trials-title">Trial Versions</h2>
+                <div class="download-grid">
+                    <div class="download-card" data-category="trials">
+                        <div class="download-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>SKYLINE ERP System</h3>
+                            <p>30-day trial of our comprehensive Enterprise Resource Planning solution.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">125 MB</span>
+                                <span>Windows Installer</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Trial
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="trials">
+                        <div class="download-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Mobile App Development Kit</h3>
+                            <p>Complete toolkit for developing cross-platform mobile applications.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">89 MB</span>
+                                <span>Development Kit</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Trial
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="trials">
+                        <div class="download-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Cloud Management Platform</h3>
+                            <p>14-day trial of our cloud infrastructure management and monitoring platform.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">67 MB</span>
+                                <span>Web Application</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Trial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Software Section -->
+            <div class="download-section" id="demos">
+                <h2 class="section-title" data-translate="download-demos-title">Demo Software</h2>
+                <div class="download-grid">
+                    <div class="download-card" data-category="demos">
+                        <div class="download-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Interactive Product Demo</h3>
+                            <p>Interactive demonstration of our flagship software products and features.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">45 MB</span>
+                                <span>Executable Demo</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="demos">
+                        <div class="download-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Video Tutorial Series</h3>
+                            <p>Comprehensive video tutorials covering all aspects of our software solutions.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">2.1 GB</span>
+                                <span>Video Collection</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Videos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="demos">
+                        <div class="download-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>API Documentation & Examples</h3>
+                            <p>Complete API documentation with working code examples and integration guides.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">12 MB</span>
+                                <span>Documentation</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download API Docs
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="download-card" data-category="demos">
+                        <div class="download-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="download-card-content">
+                            <h3>Configuration Templates</h3>
+                            <p>Pre-configured templates and sample configurations for quick setup.</p>
+                        </div>
+                        <div class="download-card-footer">
+                            <div class="download-meta">
+                                <span class="download-size">8.5 MB</span>
+                                <span>Template Files</span>
+                            </div>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                                Download Templates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p data-translate="download-stat-1">Downloads This Month</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p data-translate="download-stat-2">Available Resources</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p data-translate="download-stat-3">Download Support</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p data-translate="download-stat-4">Free Access</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Navbar Include Script -->
+    <script src="navbar-include.js"></script>
+    <script>
+        // Initialize navbar when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof includeNavbar === 'function') {
+                includeNavbar();
+            }
+        });
+    </script>
+    
+    <!-- Footer Include Script -->
+    <script src="footer-include.js"></script>
+    
+    <!-- Accessibility Pack -->
+    <script src="accessibility-pack.js"></script>
+    
+    <!-- Floating Action Button functionality is included in accessibility-pack.js -->
+
+    <script>
+        // Translation helper function
+        function getTranslation(key) {
+            if (typeof window.translationSystem !== 'undefined' && window.translationSystem) {
+                return window.translationSystem.getTranslation(key);
+            }
+            return null;
+        }
+
+        // Category filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const downloadCards = document.querySelectorAll('.download-card');
+        const downloadSections = document.querySelectorAll('.download-section');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                // Handle "All Resources" - show all sections
+                if (category === 'all') {
+                    downloadSections.forEach(section => {
+                        section.style.display = 'block';
+                        section.style.opacity = '1';
+                    });
+                    downloadCards.forEach(card => {
+                        card.style.display = 'block';
+                        card.style.animation = 'slideIn 0.5s ease-out';
+                    });
+                } else {
+                    // Hide all sections first
+                    downloadSections.forEach(section => {
+                        section.style.display = 'none';
+                        section.style.opacity = '0';
+                    });
+
+                    // Show only the target section
+                    const targetSection = document.getElementById(category);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                        targetSection.style.opacity = '1';
+                        
+                        // Smooth scroll to the section
+                        setTimeout(() => {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 100);
+                    }
+
+                    // Show/hide cards based on category
+                    downloadCards.forEach(card => {
+                        if (card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'slideIn 0.5s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Download button functionality
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const fileName = btn.textContent.trim();
+                const message = getTranslation('download-started') || 'Download started';
+                const note = getTranslation('download-note') || 'In a real implementation, this would initiate the actual download.';
+                alert(`${message}: ${fileName}\n\n${note}`);
+            });
+        });
+
+        // Add parallax effect to floating shapes
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+
+            shapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                shape.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Mouse Dust Effect
+        document.addEventListener('mousemove', function (e) {
+            if (Math.random() > 0.9) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: radial-gradient(circle, #8B0000, transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                left: ${x}px;
+                top: ${y}px;
+                animation: particleFloat 2s ease-out forwards;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 2000);
+        }
+    </script>
+    
+    <!-- Page Loader -->
+    <script src="page-loader.js"></script>
+    
+    <!-- Accessibility System -->
+    <script src="accessibility-loader.js" defer></script>
+    
+    <!-- Floating Widgets System -->
+    <script src="floating-widgets-btn.js" defer></script>
+    
+</body>
+</html>

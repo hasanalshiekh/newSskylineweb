@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Pricing Dropdown Addition</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .pass { background-color: #d4edda; }
+        .fail { background-color: #f8d7da; }
+        .test-result { font-weight: bold; }
+        .pricing-link { color: #007bff; text-decoration: none; }
+        .pricing-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Test: Pricing Link Added to Products Dropdown</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Desktop Products Dropdown</h2>
+        <div id="desktop-test">
+            <p>Loading navbar...</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Mobile Products Dropdown</h2>
+        <div id="mobile-test">
+            <p>Loading navbar...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Pricing Link Verification</h2>
+        <div id="pricing-test">
+            <p>Checking pricing links...</p>
+        </div>
+    </div>
+
+    <script>
+        // Test function to check if Pricing is added to Products dropdown
+        function testPricingAddition() {
+            const desktopTest = document.getElementById('desktop-test');
+            const mobileTest = document.getElementById('mobile-test');
+            const pricingTest = document.getElementById('pricing-test');
+            
+            // Test desktop navbar
+            const desktopNav = document.querySelector('.navbar-nav');
+            if (desktopNav) {
+                const pricingLinks = desktopNav.querySelectorAll('a[href="pricing.html"]');
+                if (pricingLinks.length > 0) {
+                    desktopTest.innerHTML = '<div class="test-result pass">✅ PASS: Pricing link found in desktop Products dropdown</div>';
+                } else {
+                    desktopTest.innerHTML = '<div class="test-result fail">❌ FAIL: Pricing link not found in desktop Products dropdown</div>';
+                }
+            } else {
+                desktopTest.innerHTML = '<div class="test-result fail">❌ FAIL: Desktop navbar not found</div>';
+            }
+            
+            // Test mobile navbar
+            const mobileNav = document.querySelector('.mobile-sidenav');
+            if (mobileNav) {
+                const mobilePricingLinks = mobileNav.querySelectorAll('a[href="pricing.html"]');
+                if (mobilePricingLinks.length > 0) {
+                    mobileTest.innerHTML = '<div class="test-result pass">✅ PASS: Pricing link found in mobile Products dropdown</div>';
+                } else {
+                    mobileTest.innerHTML = '<div class="test-result fail">❌ FAIL: Pricing link not found in mobile Products dropdown</div>';
+                }
+            } else {
+                mobileTest.innerHTML = '<div class="test-result fail">❌ FAIL: Mobile navbar not found</div>';
+            }
+            
+            // Test pricing link details
+            const allPricingLinks = document.querySelectorAll('a[href="pricing.html"]');
+            if (allPricingLinks.length > 0) {
+                let pricingDetails = '<div class="test-result pass">✅ PASS: Found ' + allPricingLinks.length + ' pricing link(s):<br>';
+                allPricingLinks.forEach((link, index) => {
+                    const icon = link.querySelector('.icon');
+                    const label = link.querySelector('.label');
+                    const text = link.textContent.trim();
+                    pricingDetails += `Link ${index + 1}: "${text}"`;
+                    if (icon) pricingDetails += ` (Icon: ${icon.textContent})`;
+                    if (label) pricingDetails += ` (Label: ${label.textContent})`;
+                    pricingDetails += '<br>';
+                });
+                pricingDetails += '</div>';
+                pricingTest.innerHTML = pricingDetails;
+            } else {
+                pricingTest.innerHTML = '<div class="test-result fail">❌ FAIL: No pricing links found</div>';
+            }
+        }
+        
+        // Run test after navbar loads
+        setTimeout(testPricingAddition, 1000);
+    </script>
+    
+    <!-- Include the navbar -->
+    <script src="navbar-include.js"></script>
+</body>
+</html>

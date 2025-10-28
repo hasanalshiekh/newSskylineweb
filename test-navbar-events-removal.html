@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Events & News Removal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .pass { background-color: #d4edda; }
+        .fail { background-color: #f8d7da; }
+        .test-result { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Test: Events & News Removal from Navbar</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Desktop Navbar</h2>
+        <div id="desktop-test">
+            <p>Loading navbar...</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Mobile Navbar</h2>
+        <div id="mobile-test">
+            <p>Loading navbar...</p>
+        </div>
+    </div>
+
+    <script>
+        // Test function to check if Events & News is removed
+        function testEventsNewsRemoval() {
+            const desktopTest = document.getElementById('desktop-test');
+            const mobileTest = document.getElementById('mobile-test');
+            
+            // Test desktop navbar
+            const desktopNav = document.querySelector('.navbar-nav');
+            if (desktopNav) {
+                const eventsLinks = desktopNav.querySelectorAll('a[href*="events-news"]');
+                if (eventsLinks.length === 0) {
+                    desktopTest.innerHTML = '<div class="test-result pass">✅ PASS: No Events & News links found in desktop navbar</div>';
+                } else {
+                    desktopTest.innerHTML = '<div class="test-result fail">❌ FAIL: Events & News links still found in desktop navbar</div>';
+                }
+            } else {
+                desktopTest.innerHTML = '<div class="test-result fail">❌ FAIL: Desktop navbar not found</div>';
+            }
+            
+            // Test mobile navbar
+            const mobileNav = document.querySelector('.mobile-sidenav');
+            if (mobileNav) {
+                const mobileEventsLinks = mobileNav.querySelectorAll('a[href*="events-news"]');
+                if (mobileEventsLinks.length === 0) {
+                    mobileTest.innerHTML = '<div class="test-result pass">✅ PASS: No Events & News links found in mobile navbar</div>';
+                } else {
+                    mobileTest.innerHTML = '<div class="test-result fail">❌ FAIL: Events & News links still found in mobile navbar</div>';
+                }
+            } else {
+                mobileTest.innerHTML = '<div class="test-result fail">❌ FAIL: Mobile navbar not found</div>';
+            }
+        }
+        
+        // Run test after navbar loads
+        setTimeout(testEventsNewsRemoval, 1000);
+    </script>
+    
+    <!-- Include the navbar -->
+    <script src="navbar-include.js"></script>
+</body>
+</html>

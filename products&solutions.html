@@ -1,0 +1,3033 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Solutions - SKYLINE Innovation Software</title>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rtl-ltr-support.css">
+    <script src="translation-system.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #777;
+            background: linear-gradient(135deg, #151515 0%, #181818 25%, #1A1A1A 50%, #171717 75%, #161616 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding-top: 80px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Heading Colors */
+        h1, h2, h3, h4, h5, h6 {
+            color: #FDF5E6 !important;
+        }
+
+        /* Paragraph Colors */
+        p {
+            color: #777 !important;
+        }
+
+        /* Card Colors - Dark Theme */
+        .service-card, .industry-card, .contact-card, .highlight-card {
+            background: #131313 !important;
+            border: 1px solid rgba(224, 10, 44, 0.2) !important;
+            color: #ffffff !important;
+        }
+        
+        .service-card h3, .industry-card h3, .contact-card h3, .highlight-card h4 {
+            color: #ffffff !important;
+        }
+        
+        .service-card p, .industry-card p, .contact-card p, .highlight-card p {
+            color: #ffffff !important;
+        }
+        
+        .service-card .feature-item, .industry-card .feature-item {
+            color: #E00A2C !important;
+        }
+        
+        .contact-card p {
+            color: #E00A2C !important;
+        }
+
+
+
+        /* RTL/LTR Support for Products Page */
+        [dir="rtl"] body {
+            direction: rtl;
+            text-align: right;
+        }
+
+        [dir="ltr"] body {
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Creative Background Elements */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.05;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #8B0000, #A52A2A);
+            border-radius: 50%;
+            animation-duration: 25s;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #000, #333);
+            transform: rotate(45deg);
+            animation-duration: 30s;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #8B0000, #000);
+            border-radius: 30%;
+            animation-duration: 35s;
+            animation-delay: 10s;
+        }
+
+        .shape:nth-child(4) {
+            top: 80%;
+            left: 20%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #A52A2A, #8B0000);
+            border-radius: 50%;
+            animation-duration: 40s;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(30px) rotate(240deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(196, 30, 58, 0.3);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Particle Animation Styles */
+        #particles-style-01 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particles-js-canvas-el {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(196, 30, 58, 0.05));
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 40px rgba(196, 30, 58, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(196, 30, 58, 0.4);
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.03), rgba(196, 30, 58, 0.03));
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.2);
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .product-features li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-features li i {
+            color: #C41E3A;
+            font-size: 0.9rem;
+        }
+
+        .product-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 0, 0, 0.3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .product-cta:hover {
+            background: #C41E3A;
+            transform: translateY(-2px);
+        }
+
+        /* Demo Booking Section */
+        .demo-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(196, 30, 58, 0.05));
+        }
+
+        .demo-container {
+            background: #131313;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .demo-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+            background: #1a1a1a;
+        }
+
+        .demo-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .demo-description {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .demo-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #dc2626;
+            background: #1f1f1f;
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .demo-btn {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Product Videos Section */
+        .videos-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.03), rgba(196, 30, 58, 0.03));
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.2);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .video-thumbnail:hover::before {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(196, 30, 58, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .video-thumbnail:hover .play-button {
+            transform: scale(1.1);
+            background: #C41E3A;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .video-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .video-duration {
+            color: #C41E3A;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Download Section Styles */
+        .download-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.03), rgba(196, 30, 58, 0.03));
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.2);
+        }
+
+        .download-card:hover::before {
+            left: 100%;
+        }
+
+        .download-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .download-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .download-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .download-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0.8rem 1rem;
+            background: rgba(139, 0, 0, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(139, 0, 0, 0.1);
+        }
+
+        .download-size {
+            font-weight: 600;
+            color: #8B0000;
+            font-size: 0.9rem;
+        }
+
+        .download-meta span:last-child {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 0, 0, 0.3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .download-btn:hover {
+            background: #C41E3A;
+            transform: translateY(-2px);
+        }
+
+        /* Pricing Promo Card */
+        .pricing-promo {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.05) 0%, rgba(139, 0, 0, 0.08) 50%, rgba(196, 30, 58, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-promo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pricingGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23C41E3A" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23pricingGrid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .pricing-promo-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+            border-radius: 30px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 60px rgba(196, 30, 58, 0.15),
+                0 10px 30px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(196, 30, 58, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .pricing-promo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .pricing-promo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 35px 80px rgba(196, 30, 58, 0.25),
+                0 15px 40px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-color: rgba(196, 30, 58, 0.4);
+        }
+
+        .pricing-promo-card:hover::before {
+            left: 100%;
+        }
+
+        .pricing-promo-header {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-promo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 
+                0 15px 35px rgba(196, 30, 58, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-promo-card:hover .pricing-promo-icon {
+            transform: scale(1.1) rotateY(15deg);
+            box-shadow: 
+                0 20px 45px rgba(196, 30, 58, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .pricing-promo-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(196, 30, 58, 0.2);
+        }
+
+        .pricing-promo-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .pricing-promo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-promo-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.8rem 1rem;
+            background: rgba(196, 30, 58, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(196, 30, 58, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-promo-feature:hover {
+            background: rgba(196, 30, 58, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .pricing-promo-feature i {
+            color: #C41E3A;
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+        .pricing-promo-feature span {
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .pricing-promo-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 15px 35px rgba(196, 30, 58, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-promo-cta:hover {
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 25px 50px rgba(196, 30, 58, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .pricing-promo-cta i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-promo-cta:hover i {
+            transform: translateX(5px);
+        }
+
+        .pricing-promo-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.4);
+            animation: badgePulse 2s ease-in-out infinite;
+            white-space: nowrap;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 20px rgba(196, 30, 58, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 30px rgba(196, 30, 58, 0.6);
+            }
+        }
+
+        /* Responsive for Pricing Promo */
+        @media (max-width: 768px) {
+            .pricing-promo-card {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .pricing-promo-title {
+                font-size: 2rem;
+            }
+
+            .pricing-promo-subtitle {
+                font-size: 1rem;
+            }
+
+            .pricing-promo-features {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .pricing-promo-cta {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .pricing-promo-badge {
+                top: 8px;
+                right: 8px;
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+                min-width: 120px;
+            }
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.03), rgba(196, 30, 58, 0.03));
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(139, 0, 0, 0.2);
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pricing-card.featured {
+            border-color: #C41E3A;
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.3);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 0 0 15px 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 0, 0, 0.6);
+            box-shadow: 0 25px 60px rgba(139, 0, 0, 0.25);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .pricing-card:hover::after {
+            left: 100%;
+        }
+
+        .pricing-header {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-plan {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(196, 30, 58, 0.2);
+        }
+
+        .pricing-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-price {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #C41E3A;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(196, 30, 58, 0.3);
+        }
+
+        .pricing-period {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            color: #666;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .pricing-features li i {
+            color: #C41E3A;
+            font-size: 1rem;
+            min-width: 16px;
+        }
+
+        .pricing-features li.unavailable {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .pricing-features li.unavailable i {
+            color: #999;
+        }
+
+        .pricing-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .pricing-cta:hover {
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(196, 30, 58, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .pricing-cta.secondary {
+            background: rgba(139, 0, 0, 0.1);
+            color: #8B0000;
+            border: 2px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .pricing-cta.secondary:hover {
+            background: rgba(139, 0, 0, 0.2);
+            color: #8B0000;
+            border-color: #8B0000;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(139, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .pricing-note p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-note strong {
+            color: #C41E3A;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-form {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px) scale(1);
+            }
+        }
+        /* 3D Carousel Styles */
+        .carousel-container {
+            margin: 4rem auto;
+            width: 280px;
+            height: 320px;
+            position: relative;
+            perspective: 1000px;
+            perspective-origin: center center;
+            overflow: visible;
+        }
+
+        .carousel {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-item {
+            display: block;
+            position: absolute;
+            background: #000;
+            width: 280px;
+            height: 320px;
+            line-height: 320px;
+            font-size: 1.5em;
+            text-align: center;
+            color: #FFF;
+            opacity: 0.95;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            transform-style: preserve-3d;
+            z-index: 1;
+        }
+
+        .carousel-item:hover {
+            opacity: 1;
+        }
+        
+        /* Click flip effect - Flip in place without movement */
+        .carousel-item:nth-child(1).flipped {
+            transform: rotateY(180deg) translateZ(300px) !important;
+            z-index: 10;
+        }
+        .carousel-item:nth-child(2).flipped {
+            transform: rotateY(60deg) translateZ(300px) rotateY(180deg) !important;
+            z-index: 10;
+        }
+        .carousel-item:nth-child(3).flipped {
+            transform: rotateY(120deg) translateZ(300px) rotateY(180deg) !important;
+            z-index: 10;
+        }
+        .carousel-item:nth-child(4).flipped {
+            transform: rotateY(180deg) translateZ(300px) rotateY(180deg) !important;
+            z-index: 10;
+        }
+        .carousel-item:nth-child(5).flipped {
+            transform: rotateY(240deg) translateZ(300px) rotateY(180deg) !important;
+            z-index: 10;
+        }
+        .carousel-item:nth-child(6).flipped {
+            transform: rotateY(300deg) translateZ(300px) rotateY(180deg) !important;
+            z-index: 10;
+        }
+        
+        /* Ensure smooth transitions for flipped cards */
+        .carousel-item.flipped {
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        
+        /* Fix for 3D positioning with flip */
+
+        .carousel-item .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .carousel-item .card-front {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+        }
+
+        .carousel-item .card-back {
+            background: linear-gradient(135deg, #000000, #020202);
+            transform: rotateY(180deg);
+            padding: 1.5rem;
+            text-align: center;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .carousel-item .card-back h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .carousel-item .card-back p {
+            color: #fff;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .carousel-item .card-back ul {
+            color: #fff;
+            font-size: 0.7rem;
+            line-height: 1.2;
+            text-align: left;
+            padding-left: 0.8rem;
+            margin: 0;
+            margin-top: 0;
+        }
+
+        .carousel-item .card-back li {
+            margin-bottom: 0.2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* ═══════════════════════════════════════════ */
+        /* أسهم التنقل للـ carousel */
+        /* ═══════════════════════════════════════════ */
+
+        .carousel-arrow {
+            position: absolute;
+            bottom: -80px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(217, 10, 44, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(217, 10, 44, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 100;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .carousel-prev {
+            left: 50%;
+            transform: translateX(-80px);
+        }
+
+        .carousel-next {
+            left: 50%;
+            transform: translateX(80px);
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(217, 10, 44, 0.4);
+            color: white;
+            border-color: rgba(217, 10, 44, 0.6);
+        }
+
+        .carousel-prev:hover {
+            transform: translateX(-80px) scale(1.1);
+        }
+
+        .carousel-next:hover {
+            transform: translateX(80px) scale(1.1);
+        }
+
+        .carousel-arrow:active {
+            background: rgba(217, 10, 44, 0.5);
+        }
+
+        .carousel-prev:active {
+            transform: translateX(-80px) scale(0.95);
+        }
+
+        .carousel-next:active {
+            transform: translateX(80px) scale(0.95);
+        }
+
+        /* إخفاء الكاروسيل الجديد على الشاشات الكبيرة */
+        .mobile-carousel-section {
+            display: none;
+        }
+
+        /* تحسينات إضافية للكاروسيل الجديد */
+        .mobile-carousel-section * {
+            box-sizing: border-box;
+        }
+
+        /* تصميم كاروسيل جديد للموبايل فقط */
+        @media (max-width: 768px) {
+            /* إخفاء الكاروسيل الأصلي في الموبايل */
+            .carousel-container {
+                display: none;
+            }
+            
+            /* إظهار الكاروسيل الجديد للموبايل */
+            .mobile-carousel-section {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .mobile-carousel-container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 100px;
+            }
+
+            .mobile-carousel {
+                display: flex;
+                transition: transform 0.5s ease;
+                gap: 20px;
+                padding: 10px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .mobile-carousel::-webkit-scrollbar {
+                display: none;
+            }
+
+            .mobile-carousel {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            .mobile-carousel-item {
+                min-width: 85%;
+                height: 400px;
+                perspective: 1000px;
+                flex-shrink: 0;
+                scroll-snap-align: center;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .mobile-card-face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                overflow: hidden;
+                top: 0;
+                left: 0;
+            }
+
+            .mobile-card-front {
+                background: white;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mobile-card-front img {
+                width: 100%;
+                height: 70%;
+                object-fit: cover;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .mobile-item-content {
+                padding: 20px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                background: white;
+                border-radius: 0 0 15px 15px;
+            }
+
+            .mobile-item-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .mobile-item-description {
+                color: #7f8c8d;
+                font-size: 1rem;
+            }
+
+            .mobile-card-back {
+                background: linear-gradient(135deg, #000000, #020202);
+                color: white;
+                padding: 25px;
+                transform: rotateY(180deg);
+                overflow-y: auto;
+                border-radius: 15px;
+            }
+
+            .mobile-card-back h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                text-align: center;
+                color: #ecf0f1;
+            }
+
+            .mobile-card-back p {
+                margin-bottom: 20px;
+                line-height: 1.6;
+                text-align: center;
+            }
+
+            .mobile-card-back ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .mobile-card-back li {
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                position: relative;
+                padding-right: 20px;
+                margin-bottom: 5px;
+            }
+
+            .mobile-card-back li:before {
+                content: "✓";
+                position: absolute;
+                right: 0;
+                color: #2ecc71;
+                font-weight: bold;
+            }
+
+            .mobile-carousel-item.flipped .mobile-card-front {
+                transform: rotateY(180deg);
+            }
+
+            .mobile-carousel-item.flipped .mobile-card-back {
+                transform: rotateY(0);
+            }
+
+            /* تحسين تأثير الـ flip */
+            .mobile-carousel-item {
+                transition: transform 0.3s ease;
+            }
+
+            .mobile-carousel-item.flipped {
+                transform: scale(1.02);
+                z-index: 10;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            /* تحسينات إضافية للعرض */
+            .mobile-carousel-item:active:not(.flipped) {
+                transform: scale(0.98);
+            }
+
+            .mobile-carousel-item.flipped:active {
+                transform: scale(1.0);
+            }
+
+            /* أسهم التنقل للموبايل */
+            .mobile-carousel-arrow {
+                position: absolute;
+                bottom: -80px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                z-index: 10;
+                transition: all 0.3s ease;
+                border: 2px solid rgba(52, 152, 219, 0.3);
+            }
+
+            .mobile-carousel-prev:hover {
+                background: white;
+                transform: translateX(-50%) scale(1.1);
+                border-color: #3498db;
+            }
+
+            .mobile-carousel-next:hover {
+                background: white;
+                transform: translateX(-50%) scale(1.1);
+                border-color: #3498db;
+            }
+
+            .mobile-carousel-prev:active {
+                transform: translateX(-50%) scale(0.95);
+            }
+
+            .mobile-carousel-next:active {
+                transform: translateX(-50%) scale(0.95);
+            }
+
+            .mobile-carousel-prev {
+                left: 50%;
+                transform: translateX(-50%);
+                margin-left: -60px;
+            }
+
+            .mobile-carousel-next {
+                left: 50%;
+                transform: translateX(-50%);
+                margin-left: 60px;
+            }
+
+            .mobile-carousel-arrow i {
+                font-size: 1.2rem;
+                color: #3498db;
+                font-weight: bold;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-carousel-item {
+                min-width: 90%;
+                height: 380px;
+            }
+
+            .mobile-item-title {
+                font-size: 1.3rem;
+            }
+
+            .mobile-card-back {
+                padding: 20px;
+            }
+
+            .mobile-card-back h3 {
+                font-size: 1.3rem;
+            }
+
+            .mobile-carousel-arrow {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+                bottom: -70px;
+            }
+
+            .mobile-carousel-prev {
+                margin-left: -50px;
+            }
+
+            .mobile-carousel-next {
+                margin-left: 50px;
+            }
+        }
+
+        /* للشاشات الصغيرة جداً */
+        @media (max-width: 360px) {
+            .mobile-carousel-item {
+                min-width: 95%;
+                height: 360px;
+            }
+
+            .mobile-item-title {
+                font-size: 1.2rem;
+            }
+
+            .mobile-card-back {
+                padding: 15px;
+            }
+
+            .mobile-card-back h3 {
+                font-size: 1.2rem;
+            }
+
+            .mobile-card-back p {
+                font-size: 0.9rem;
+            }
+
+            .mobile-card-back ul {
+                font-size: 0.8rem;
+            }
+
+            .mobile-carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: -60px;
+            }
+
+            .mobile-carousel-prev {
+                margin-left: -40px;
+            }
+
+            .mobile-carousel-next {
+                margin-left: 40px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════ */
+
+        .carousel-item .item-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1rem;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .carousel-item .item-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-item .item-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* 3D Positioning for 6 items */
+        .carousel-item:nth-child(1) {
+            transform: rotateY(0deg) translateZ(300px);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            z-index: 1;
+        }
+        .carousel-item:nth-child(1).flipped {
+            transform: rotateY(0deg) translateZ(300px) rotateY(180deg) !important;
+            z-index: 10;
+        }
+        .carousel-item:nth-child(2) {
+            transform: rotateY(60deg) translateZ(300px);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            z-index: 1;
+        }
+        .carousel-item:nth-child(2).flipped {
+            transform: rotateY(60deg) translateZ(300px) rotateY(180deg) !important;
+        }
+        .carousel-item:nth-child(3) {
+            transform: rotateY(120deg) translateZ(300px);
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            z-index: 1;
+        }
+        .carousel-item:nth-child(3).flipped {
+            transform: rotateY(120deg) translateZ(300px) rotateY(180deg) !important;
+        }
+        .carousel-item:nth-child(4) {
+            transform: rotateY(180deg) translateZ(300px);
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            z-index: 1;
+        }
+        .carousel-item:nth-child(4).flipped {
+            transform: rotateY(180deg) translateZ(300px) rotateY(180deg) !important;
+        }
+        .carousel-item:nth-child(5) {
+            transform: rotateY(240deg) translateZ(300px);
+            background: linear-gradient(135deg, #fa709a, #fee140);
+            z-index: 1;
+        }
+        .carousel-item:nth-child(5).flipped {
+            transform: rotateY(240deg) translateZ(300px) rotateY(180deg) !important;
+        }
+        .carousel-item:nth-child(6) {
+            transform: rotateY(300deg) translateZ(300px);
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            z-index: 1;
+        }
+        .carousel-item:nth-child(6).flipped {
+            transform: rotateY(300deg) translateZ(300px) rotateY(180deg) !important;
+        }
+
+
+        .carousel-section {
+            background: #131313;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 4rem auto;
+            max-width: 500px;
+            position: relative;
+            z-index: 10;
+            isolation: isolate;
+            overflow: visible;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .carousel-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            /* إزالة الحواشي من الصفحة كاملة */
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            .container {
+                padding: 0 0.5rem !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            .carousel-section {
+                margin: 1rem auto;
+                padding: 0.5rem;
+                max-width: 100%;
+                overflow: visible;
+            }
+            
+            .carousel-container {
+                width: 240px;
+                height: 280px;
+                perspective: 800px;
+                perspective-origin: center center;
+                overflow: visible;
+                margin: 0 auto;
+            }
+            
+            /* إزالة الحواشي من جميع العناصر */
+            * {
+                box-sizing: border-box;
+            }
+            
+            .hero {
+                padding: 120px 0.5rem 60px !important;
+                margin: 0 !important;
+            }
+            
+            .products-section {
+                padding: 40px 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            .demo-section {
+                padding: 40px 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            .videos-section {
+                padding: 40px 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            .download-section {
+                padding: 40px 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            .pricing-section {
+                padding: 40px 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            /* إزالة الحواشي من النافبار */
+            .header {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            .nav-container {
+                padding: 0 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            /* إزالة الحواشي من الفوتر */
+            footer {
+                padding: 20px 0.5rem !important;
+                margin: 0 !important;
+            }
+            
+            /* إزالة الحواشي من العناصر الداخلية */
+            .section-header {
+                margin-bottom: 2rem !important;
+                padding: 0 0.5rem !important;
+            }
+            
+            .section-title {
+                font-size: 1.8rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero p {
+                font-size: 1.1rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            /* إزالة الحواشي من النماذج */
+            .demo-form {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem !important;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.8rem !important;
+                margin: 0 !important;
+            }
+            
+            .carousel-item {
+                width: 240px;
+                height: 280px;
+                line-height: 280px;
+                font-size: 1.2em;
+                transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(260px); }
+            .carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(260px); }
+            .carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(260px); }
+            .carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(260px); }
+            .carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(260px); }
+            .carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(260px); }
+            
+            .carousel-item .item-title {
+                font-size: 1.1rem;
+            }
+            
+            .carousel-item .item-description {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-item .card-back {
+                padding: 0.8rem;
+            }
+            
+            .carousel-item .card-back h3 {
+                font-size: 1rem;
+                margin-bottom: 5px;
+                line-height: 1.2;
+            }
+            
+            .carousel-item .card-back p {
+                font-size: 0.7rem;
+                margin-top: 0;
+                margin-bottom: 5px;
+                line-height: 1.2;
+            }
+            
+            .carousel-item .card-back ul {
+                font-size: 0.6rem;
+                line-height: 1.1;
+            }
+            
+            .carousel-item .card-back li {
+                margin-bottom: 0.20rem;
+            }
+            
+            /* Mobile click flip - Flip in place without movement */
+            .carousel-item:nth-child(1).flipped { 
+                transform: rotateY(0deg) translateZ(260px) rotateY(180deg) !important; 
+                z-index: 10;
+            }
+            .carousel-item:nth-child(2).flipped { 
+                transform: rotateY(60deg) translateZ(260px) rotateY(180deg) !important; 
+                z-index: 10;
+            }
+            .carousel-item:nth-child(3).flipped { 
+                transform: rotateY(120deg) translateZ(260px) rotateY(180deg) !important; 
+                z-index: 10;
+            }
+            .carousel-item:nth-child(4).flipped { 
+                transform: rotateY(180deg) translateZ(260px) rotateY(180deg) !important; 
+                z-index: 10;
+            }
+            .carousel-item:nth-child(5).flipped { 
+                transform: rotateY(240deg) translateZ(260px) rotateY(180deg) !important; 
+                z-index: 10;
+            }
+            .carousel-item:nth-child(6).flipped { 
+                transform: rotateY(300deg) translateZ(260px) rotateY(180deg) !important; 
+                z-index: 10;
+            }
+            
+            /* Ensure smooth transitions for flipped cards on mobile */
+            .carousel-item.flipped {
+                transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Particle Animation -->
+        <div id="particles-style-01" class="position-absolute h-100 top-0 left-0 w-100" data-particle="true" data-particle-options="{ &quot;particles&quot;: { &quot;number&quot;: { &quot;value&quot;: 80, &quot;density&quot;: { &quot;enable&quot;: true, &quot;value_area&quot;: 800 } }, &quot;color&quot;: { &quot;value&quot;: &quot;#DC2626&quot; }, &quot;shape&quot;: { &quot;type&quot;: &quot;circle&quot;, &quot;stroke&quot;: { &quot;width&quot;: 0, &quot;color&quot;: &quot;#DC2626&quot; }, &quot;polygon&quot;: { &quot;nb_sides&quot;: 5 }, &quot;image&quot;: { &quot;src&quot;: &quot;img/github.svg&quot;, &quot;width&quot;: 100, &quot;height&quot;: 100 } }, &quot;opacity&quot;: { &quot;value&quot;: 0.6, &quot;random&quot;: false, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 1, &quot;opacity_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;size&quot;: { &quot;value&quot;: 4, &quot;random&quot;: true, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 40, &quot;size_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;line_linked&quot;: { &quot;enable&quot;: true, &quot;distance&quot;: 150, &quot;color&quot;: &quot;#DC2626&quot;, &quot;opacity&quot;: 0.8, &quot;width&quot;: 1 }, &quot;move&quot;: { &quot;enable&quot;: true, &quot;speed&quot;: 6, &quot;direction&quot;: &quot;none&quot;, &quot;random&quot;: false, &quot;straight&quot;: false, &quot;out_mode&quot;: &quot;out&quot;, &quot;bounce&quot;: false, &quot;attract&quot;: { &quot;enable&quot;: false, &quot;rotateX&quot;: 600, &quot;rotateY&quot;: 1200 } } }, &quot;interactivity&quot;: { &quot;detect_on&quot;: &quot;canvas&quot;, &quot;events&quot;: { &quot;onhover&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;repulse&quot; }, &quot;onclick&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;push&quot; }, &quot;resize&quot;: true }, &quot;modes&quot;: { &quot;grab&quot;: { &quot;distance&quot;: 400, &quot;line_linked&quot;: { &quot;opacity&quot;: 1 } }, &quot;bubble&quot;: { &quot;distance&quot;: 400, &quot;size&quot;: 40, &quot;duration&quot;: 2, &quot;opacity&quot;: 8, &quot;speed&quot;: 3 }, &quot;repulse&quot;: { &quot;distance&quot;: 200, &quot;duration&quot;: 0.4 }, &quot;push&quot;: { &quot;particles_nb&quot;: 4 }, &quot;remove&quot;: { &quot;particles_nb&quot;: 2 } } }, &quot;retina_detect&quot;: true}">
+            <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+        </div>
+        <div class="container">
+            <h1 data-translate="products-hero-title">Our Products & Solutions</h1>
+            <p data-translate="products-hero-description">Discover a comprehensive suite of software solutions, SaaS platforms, and innovative tools designed to transform your business operations</p>
+            <a href="#demo" class="hero-cta">
+                <i class="fas fa-calendar-check"></i>
+                <span data-translate="products-hero-cta">Book Your Demo</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="software-solutions" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="products-section-title">Software Solutions</h2>
+                <p class="section-subtitle" data-translate="products-section-subtitle">Comprehensive tools and platforms to drive your business forward</p>
+            </div>
+            
+           
+                    </div>
+    </section>
+
+   
+
+    <!-- 3D Carousel Section -->
+    <section class="carousel-section">
+        
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item ">
+                    <div class="card-face card-front">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="HR Management">
+                        <div class="item-content">
+                            <div class="item-title">HR Management</div>
+                            <div class="item-description">Complete HR solutions</div>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <h3>HR Management</h3>
+                        <p>Complete human resources management platform for modern organizations</p>
+                        <ul>
+                            <li>Employee database management</li>
+                            <li>Payroll processing</li>
+                            <li>Performance tracking</li>
+                            <li>Leave management</li>
+                            <li>Recruitment tools</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card-face card-front">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ERP System">
+                        <div class="item-content">
+                            <div class="item-title">ERP</div>
+                            <div class="item-description">Enterprise resource planning</div>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <h3>ERP System</h3>
+                        <p>Comprehensive enterprise resource planning for business optimization</p>
+                        <ul>
+                            <li>Advanced financial management and accounting</li>
+                            <li>Real-time inventory control and optimization</li>
+                            <li>Integrated supply chain management</li>
+                            <li>Customer relationship management (CRM)</li>
+                            <li>Business intelligence and analytics dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card-face card-front">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fawtara System">
+                        <div class="item-content">
+                            <div class="item-title">Fawtara System</div>
+                            <div class="item-description">Advanced invoicing system</div>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <h3>Fawtara System</h3>
+                        <p>Next-generation invoicing and financial management platform</p>
+                        <ul>
+                            <li>Automated invoice generation with custom templates</li>
+                            <li>Real-time payment tracking and notifications</li>
+                            <li>Advanced tax calculations and compliance</li>
+                            <li>Multi-channel customer billing system</li>
+                            <li>Comprehensive financial reporting and analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card-face card-front">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Maintenance">
+                        <div class="item-content">
+                            <div class="item-title">Maintenance</div>
+                            <div class="item-description">Equipment maintenance</div>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <h3>Maintenance System</h3>
+                        <p>Intelligent equipment maintenance and asset management solution</p>
+                        <ul>
+                            <li>Advanced asset tracking with IoT integration</li>
+                            <li>Predictive maintenance scheduling with AI</li>
+                            <li>Automated work order management system</li>
+                            <li>Real-time inventory tracking and alerts</li>
+                            <li>Performance monitoring and analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card-face card-front">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cash Link">
+                        <div class="item-content">
+                            <div class="item-title">Cash Link</div>
+                            <div class="item-description">Payment processing</div>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <h3>Cash Link System</h3>
+                        <p>Advanced payment processing and financial management platform</p>
+                        <ul>
+                            <li>Multi-gateway payment integration and processing</li>
+                            <li>Real-time transaction processing and settlement</li>
+                            <li>Comprehensive financial reporting and analytics</li>
+                            <li>Bank-level security and compliance standards</li>
+                            <li>Multi-currency support with live exchange rates</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card-face card-front">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ISO">
+                        <div class="item-content">
+                            <div class="item-title">ISO</div>
+                            <div class="item-description">Quality management</div>
+                        </div>
+                    </div>
+                    <!-- <div class="card-face card-back">
+
+                        <h3>ISO Management System</h3>
+                        <p>Comprehensive quality management and compliance platform</p>
+                        <ul>
+                            <li>ISO standards compliance and certification</li>
+                            <li>Advanced document management and version control</li>
+                            <li>Automated audit tracking and reporting</li>
+                            <li>Continuous process improvement tools</li>
+                            <li>Certification management and renewal tracking</li>
+                        </ul>
+                    </div> -->
+
+                    <div class="card-face card-back">
+                        <h3>ISO Management</h3>
+                        <p>Quality management and compliance</p>
+                        <ul>
+                            <li>ISO standards compliance and certification</li>
+                                <li>Advanced document management and version control</li>
+                                <li>Automated audit tracking and reporting</li>
+                            <li>Continuous process improvement tools</li>
+                            <li>Certification management and renewal tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- أسهم التنقل للموبايل -->
+            <button class="carousel-arrow carousel-prev" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-arrow carousel-next" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Mobile Carousel Section (Hidden on Desktop) -->
+    <section class="mobile-carousel-section">
+        <div class="mobile-carousel-container">
+            <div class="mobile-carousel">
+                <div class="mobile-carousel-item">
+                    <div class="mobile-card-face mobile-card-front">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="HR Management">
+                        <div class="mobile-item-content">
+                            <div class="mobile-item-title">HR Management</div>
+                            <div class="mobile-item-description">Complete HR solutions</div>
+                        </div>
+                    </div>
+                    <div class="mobile-card-face mobile-card-back">
+                        <h3>HR Management</h3>
+                        <p>Complete human resources management platform for modern organizations</p>
+                        <ul>
+                            <li>Employee database management</li>
+                            <li>Payroll processing</li>
+                            <li>Performance tracking</li>
+                            <li>Leave management</li>
+                            <li>Recruitment tools</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-carousel-item">
+                    <div class="mobile-card-face mobile-card-front">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ERP System">
+                        <div class="mobile-item-content">
+                            <div class="mobile-item-title">ERP</div>
+                            <div class="mobile-item-description">Enterprise resource planning</div>
+                        </div>
+                    </div>
+                    <div class="mobile-card-face mobile-card-back">
+                        <h3>ERP System</h3>
+                        <p>Comprehensive enterprise resource planning for business optimization</p>
+                        <ul>
+                            <li>Advanced financial management and accounting</li>
+                            <li>Real-time inventory control and optimization</li>
+                            <li>Integrated supply chain management</li>
+                            <li>Customer relationship management (CRM)</li>
+                            <li>Business intelligence and analytics dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-carousel-item">
+                    <div class="mobile-card-face mobile-card-front">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fawtara System">
+                        <div class="mobile-item-content">
+                            <div class="mobile-item-title">Fawtara System</div>
+                            <div class="mobile-item-description">Advanced invoicing system</div>
+                        </div>
+                    </div>
+                    <div class="mobile-card-face mobile-card-back">
+                        <h3>Fawtara System</h3>
+                        <p>Next-generation invoicing and financial management platform</p>
+                        <ul>
+                            <li>Automated invoice generation with custom templates</li>
+                            <li>Real-time payment tracking and notifications</li>
+                            <li>Advanced tax calculations and compliance</li>
+                            <li>Multi-channel customer billing system</li>
+                            <li>Comprehensive financial reporting and analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-carousel-item">
+                    <div class="mobile-card-face mobile-card-front">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Maintenance">
+                        <div class="mobile-item-content">
+                            <div class="mobile-item-title">Maintenance</div>
+                            <div class="mobile-item-description">Equipment maintenance</div>
+                        </div>
+                    </div>
+                    <div class="mobile-card-face mobile-card-back">
+                        <h3>Maintenance System</h3>
+                        <p>Intelligent equipment maintenance and asset management solution</p>
+                        <ul>
+                            <li>Advanced asset tracking with IoT integration</li>
+                            <li>Predictive maintenance scheduling with AI</li>
+                            <li>Automated work order management system</li>
+                            <li>Real-time inventory tracking and alerts</li>
+                            <li>Performance monitoring and analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-carousel-item">
+                    <div class="mobile-card-face mobile-card-front">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cash Link">
+                        <div class="mobile-item-content">
+                            <div class="mobile-item-title">Cash Link</div>
+                            <div class="mobile-item-description">Payment processing</div>
+                        </div>
+                    </div>
+                    <div class="mobile-card-face mobile-card-back">
+                        <h3>Cash Link System</h3>
+                        <p>Advanced payment processing and financial management platform</p>
+                        <ul>
+                            <li>Multi-gateway payment integration and processing</li>
+                            <li>Real-time transaction processing and settlement</li>
+                            <li>Comprehensive financial reporting and analytics</li>
+                            <li>Bank-level security and compliance standards</li>
+                            <li>Multi-currency support with live exchange rates</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-carousel-item">
+                    <div class="mobile-card-face mobile-card-front">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ISO">
+                        <div class="mobile-item-content">
+                            <div class="mobile-item-title">ISO</div>
+                            <div class="mobile-item-description">Quality management</div>
+                        </div>
+                    </div>
+                    <div class="mobile-card-face mobile-card-back">
+                        <h3>ISO Management</h3>
+                        <p>Quality management and compliance</p>
+                        <ul>
+                            <li>ISO standards compliance and certification</li>
+                            <li>Advanced document management and version control</li>
+                            <li>Automated audit tracking and reporting</li>
+                            <li>Continuous process improvement tools</li>
+                            <li>Certification management and renewal tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- أسهم التنقل للموبايل -->
+            <button class="mobile-carousel-arrow mobile-carousel-prev" aria-label="Previous">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="mobile-carousel-arrow mobile-carousel-next" aria-label="Next">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Demo Booking Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="demo-booking-title">Book Your Demo</h2>
+                <p class="section-subtitle" data-translate="demo-booking-subtitle">Test our solutions directly with a customized demo</p>
+            </div>
+            
+            <div class="demo-container">
+                <h3 class="demo-title" data-translate="demo-booking-form-title">Schedule a Free Demo</h3>
+                <p class="demo-description" data-translate="demo-booking-form-description">Our experts will guide you through our solutions and answer all your questions. Choose the time that works for you.</p>
+                
+                <form class="demo-form">
+                    <div class="form-group">
+                        <label for="name" data-translate="form-name-label">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name" data-translate-placeholder="form-name-placeholder">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" data-translate="form-company-label">Company Name *</label>
+                        <input type="text" id="company" name="company" required placeholder="Enter your company name" data-translate-placeholder="form-company-placeholder">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" data-translate="form-email-label">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address" data-translate-placeholder="form-email-placeholder">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" data-translate="form-phone-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" data-translate-placeholder="form-phone-placeholder">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product" data-translate="form-product-label">Product of Interest *</label>
+                        <select id="product" name="product" required>
+                            <option value="" data-translate="form-product-placeholder">Select Product</option>
+                            <option value="erp">SKYLINE ERP</option>
+                            <option value="crm">SKYLINE CRM</option>
+                            <option value="commerce">SKYLINE Commerce</option>
+                            <option value="ai">SKYLINE AI Analytics</option>
+                            <option value="cloud">SKYLINE Cloud</option>
+                            <option value="mobile">SKYLINE Mobile</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date" data-translate="form-date-label">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time" data-translate="form-time-label">Preferred Time *</label>
+                        <select id="time" name="time" required>
+                            <option value="" data-translate="form-time-placeholder">Select Time</option>
+                            <option value="09:00" data-translate="time-09-00">9:00 AM</option>
+                            <option value="10:00" data-translate="time-10-00">10:00 AM</option>
+                            <option value="11:00" data-translate="time-11-00">11:00 AM</option>
+                            <option value="12:00" data-translate="time-12-00">12:00 PM</option>
+                            <option value="14:00" data-translate="time-14-00">2:00 PM</option>
+                            <option value="15:00" data-translate="time-15-00">3:00 PM</option>
+                            <option value="16:00" data-translate="time-16-00">4:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-translate="form-message-label">Additional Notes</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Tell us about your specific needs or questions" data-translate-placeholder="form-message-placeholder"></textarea>
+                    </div>
+                </form>
+                
+                <button type="submit" class="demo-btn">
+                    <i class="fas fa-calendar-check"></i>
+                    <span data-translate="demo-booking-button">Book Demo Now</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Videos Section -->
+    <!-- <section id="videos" class="videos-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="videos-section-title">Product Videos</h2>
+                <p class="section-subtitle" data-translate="videos-section-subtitle">Watch detailed demos and tutorials for our solutions</p>
+            </div>
+            
+            <div class="videos-grid">
+               
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" data-translate="video-erp-title">SKYLINE ERP - Complete Overview</h3>
+                        <p class="video-description" data-translate="video-erp-description">Learn how our ERP solution can streamline all your business operations from finance to inventory management.</p>
+                        <span class="video-duration" data-translate="video-erp-duration">15:30 minutes</span>
+                    </div>
+                </div>
+
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" data-translate="video-crm-title">SKYLINE CRM - Sales & Customer Management</h3>
+                        <p class="video-description" data-translate="video-crm-description">Discover how our CRM platform can boost your sales performance and improve customer relationships.</p>
+                        <span class="video-duration" data-translate="video-crm-duration">12:45 minutes</span>
+                    </div>
+                </div>
+
+               
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" data-translate="video-ecommerce-title">SKYLINE Commerce - E-store Setup</h3>
+                        <p class="video-description" data-translate="video-ecommerce-description">Step-by-step guide to setting up your online store using our e-commerce platform.</p>
+                        <span class="video-duration" data-translate="video-ecommerce-duration">18:20 minutes</span>
+                    </div>
+                </div>
+
+              
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" data-translate="video-ai-title">SKYLINE AI Analytics - Data Insights</h3>
+                        <p class="video-description" data-translate="video-ai-description">Explore the power of AI-powered analytics and how it can transform your business decisions.</p>
+                        <span class="video-duration" data-translate="video-ai-duration">20:15 minutes</span>
+                    </div>
+                </div>
+
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" data-translate="video-cloud-title">SKYLINE Cloud - Infrastructure Overview</h3>
+                        <p class="video-description" data-translate="video-cloud-description">Learn about our cloud hosting solutions and how they can scale with your business needs.</p>
+                        <span class="video-duration" data-translate="video-cloud-duration">14:30 minutes</span>
+                    </div>
+                </div>
+
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" data-translate="video-mobile-title">SKYLINE Mobile - App Development</h3>
+                        <p class="video-description" data-translate="video-mobile-description">See how we create powerful mobile applications that work seamlessly across all devices.</p>
+                        <span class="video-duration" data-translate="video-mobile-duration">16:45 minutes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+   
+    <!-- <section class="pricing-promo">
+        <div class="container">
+            <div class="pricing-promo-card" onclick="window.location.href='pricing.html'">
+                <div class="pricing-promo-badge">Special Offer</div>
+                
+                <div class="pricing-promo-header">
+                    <div class="pricing-promo-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h2 class="pricing-promo-title" data-translate="pricing-promo-title">Discover Our Pricing Plans</h2>
+                    <p class="pricing-promo-subtitle" data-translate="pricing-promo-subtitle">Choose the perfect plan for your business needs with flexible pricing options</p>
+                </div>
+                
+                <div class="pricing-promo-features">
+                    <div class="pricing-promo-feature">
+                        <i class="fas fa-rocket"></i>
+                        <span data-translate="pricing-promo-feature-1">Start from $99/month</span>
+                    </div>
+                    <div class="pricing-promo-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-translate="pricing-promo-feature-2">30-day free trial</span>
+                    </div>
+                    <div class="pricing-promo-feature">
+                        <i class="fas fa-users"></i>
+                        <span data-translate="pricing-promo-feature-3">Scalable for any team size</span>
+                    </div>
+                    <div class="pricing-promo-feature">
+                        <i class="fas fa-headset"></i>
+                        <span data-translate="pricing-promo-feature-4">24/7 premium support</span>
+                    </div>
+                    <div class="pricing-promo-feature">
+                        <i class="fas fa-cogs"></i>
+                        <span data-translate="pricing-promo-feature-5">All features included</span>
+                    </div>
+                    <div class="pricing-promo-feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span data-translate="pricing-promo-feature-6">Advanced analytics</span>
+                    </div>
+                </div>
+                
+                <a href="pricing.html" class="pricing-promo-cta" data-translate="pricing-promo-cta">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>View All Pricing Plans</span>
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+   
+  
+
+    <!-- Navbar Include Script -->
+    <script src="navbar-include.js"></script>
+    
+    <!-- Footer Include Script -->
+    <script src="footer-include.js"></script>
+    
+    <!-- Accessibility Pack -->
+    <script src="accessibility-pack.js"></script>
+    
+    <!-- Floating Action Button functionality is included in accessibility-pack.js -->
+
+    <script>
+        // Form submission handling
+        const demoForm = document.querySelector('.demo-form');
+        const demoBtn = document.querySelector('.demo-btn');
+
+        if (demoBtn) {
+            demoBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(demoForm);
+                const data = Object.fromEntries(formData);
+                
+                // Basic validation
+                if (!data.name || !data.company || !data.email || !data.product || !data.date || !data.time) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+                
+                // Simulate form submission
+                alert('Thank you! We will contact you soon to confirm your demo appointment.');
+                
+                // Reset form
+                demoForm.reset();
+            });
+        }
+
+        // Video thumbnail click handling
+        document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                // Here you would typically open a video modal or redirect to video page
+                alert('Video player will open here. In the real application, this would show a video modal or redirect to the video page.');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Pricing card interactions
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = this.classList.contains('featured') 
+                    ? 'translateY(-10px) scale(1.05)' 
+                    : 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = this.classList.contains('featured') 
+                    ? 'scale(1.05)' 
+                    : 'translateY(0)';
+            });
+        });
+
+        // Pricing CTA click handling
+        document.querySelectorAll('.pricing-cta').forEach(cta => {
+            cta.addEventListener('click', function(e) {
+                e.preventDefault();
+                const planName = this.closest('.pricing-card').querySelector('.pricing-plan').textContent;
+                
+                if (this.textContent.includes('Contact Sales')) {
+                    alert(`Contact our sales team for Enterprise pricing and custom solutions for ${planName} plan.`);
+                } else {
+                    alert(`Starting your ${planName} plan selection. You will be redirected to the demo booking form.`);
+                    // Scroll to demo section
+                    const demoSection = document.getElementById('demo');
+                    if (demoSection) {
+                        demoSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Pricing Promo Card interactions
+        const pricingPromoCard = document.querySelector('.pricing-promo-card');
+        if (pricingPromoCard) {
+            // Add click effect
+            pricingPromoCard.addEventListener('click', function(e) {
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(196, 30, 58, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                    z-index: 1;
+                `;
+                
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                // Navigate to pricing page after animation
+                setTimeout(() => {
+                    window.location.href = 'pricing.html';
+                }, 300);
+            });
+            
+            // Add hover sound effect (visual feedback)
+            pricingPromoCard.addEventListener('mouseenter', function() {
+                this.style.cursor = 'pointer';
+            });
+        }
+
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    
+    <!-- Particle Animation Script -->
+    <script>
+        // Initialize particle animation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if particles.js is loaded
+            if (typeof particlesJS !== 'undefined') {
+                // Initialize particles with the configuration from data attribute
+                const particleElement = document.getElementById('particles-style-01');
+                if (particleElement) {
+                    const config = JSON.parse(particleElement.getAttribute('data-particle-options'));
+                    particlesJS('particles-style-01', config);
+                    console.log('Particle animation initialized successfully on products page!');
+                }
+            } else {
+                console.warn('Particles.js library not loaded');
+            }
+        });
+    </script>
+    
+    <!-- Page Loader -->
+    <script src="page-loader.js"></script>
+
+    <!-- Carousel Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            
+            if (carousel && prevBtn && nextBtn) {
+                let currentRotation = 0;
+                const angleStep = 60; // 360 / 6 items = 60 degrees per item
+                
+                function rotateCarousel(direction) {
+                    if (direction === 'next') {
+                        currentRotation -= angleStep;
+                    } else {
+                        currentRotation += angleStep;
+                    }
+                    carousel.style.transform = `rotateY(${currentRotation}deg)`;
+                }
+                
+                prevBtn.addEventListener('click', function() {
+                    rotateCarousel('prev');
+                });
+                
+                nextBtn.addEventListener('click', function() {
+                    rotateCarousel('next');
+                });
+                
+                // Touch support for mobile
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                carousel.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+                
+                carousel.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+                
+                function handleSwipe() {
+                    if (touchEndX < touchStartX - 50) {
+                        // Swipe left
+                        rotateCarousel('next');
+                    }
+                    if (touchEndX > touchStartX + 50) {
+                        // Swipe right
+                        rotateCarousel('prev');
+                    }
+                }
+                
+                console.log('✅ Carousel navigation initialized successfully!');
+            }
+        });
+    </script>
+
+    <!-- Mobile Carousel JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileCarousel = document.querySelector('.mobile-carousel');
+            const mobilePrevButton = document.querySelector('.mobile-carousel-prev');
+            const mobileNextButton = document.querySelector('.mobile-carousel-next');
+            const mobileCarouselItems = document.querySelectorAll('.mobile-carousel-item');
+            
+            if (mobileCarousel && mobilePrevButton && mobileNextButton) {
+                let currentIndex = 0;
+                const itemWidth = mobileCarouselItems[0].offsetWidth + 20; // width + gap
+                
+                // دالة لتحريك الكاروسيل
+                function moveMobileCarousel(index) {
+                    mobileCarousel.scrollTo({
+                        left: index * itemWidth,
+                        behavior: 'smooth'
+                    });
+                    currentIndex = index;
+                }
+                
+                // حدث الزر السابق
+                mobilePrevButton.addEventListener('click', function() {
+                    if (currentIndex > 0) {
+                        moveMobileCarousel(currentIndex - 1);
+                    }
+                });
+                
+                // حدث الزر التالي
+                mobileNextButton.addEventListener('click', function() {
+                    if (currentIndex < mobileCarouselItems.length - 1) {
+                        moveMobileCarousel(currentIndex + 1);
+                    }
+                });
+                
+                // كشف التمرير التلقائي
+                mobileCarousel.addEventListener('scroll', function() {
+                    currentIndex = Math.round(mobileCarousel.scrollLeft / itemWidth);
+                });
+                
+                // تأثير اللمس للموبايل
+                let startX;
+                let scrollLeft;
+                
+                mobileCarousel.addEventListener('touchstart', function(e) {
+                    startX = e.touches[0].pageX - mobileCarousel.offsetLeft;
+                    scrollLeft = mobileCarousel.scrollLeft;
+                });
+                
+                mobileCarousel.addEventListener('touchmove', function(e) {
+                    if (!startX) return;
+                    const x = e.touches[0].pageX - mobileCarousel.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    mobileCarousel.scrollLeft = scrollLeft - walk;
+                });
+                
+                // إضافة وظيفة الـ flip عند الضغط على الكروت
+                mobileCarouselItems.forEach((item, index) => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // التحقق من أن الكرت ليس مقلوب بالفعل
+                        if (this.classList.contains('flipped')) {
+                            // إغلاق الكرت إذا كان مقلوب بالفعل
+                            this.classList.remove('flipped');
+                            console.log(`Card ${index + 1} closed!`);
+                        } else {
+                            // إزالة الـ flipped من جميع الكروت
+                            mobileCarouselItems.forEach(card => {
+                                card.classList.remove('flipped');
+                            });
+                            
+                            // إضافة الـ flipped للكرت المضغوط
+                            this.classList.add('flipped');
+                            console.log(`Card ${index + 1} flipped!`);
+                        }
+                    });
+                });
+                
+                // إضافة وظيفة لإغلاق الـ flip عند الضغط خارج الكروت
+                document.addEventListener('click', function(e) {
+                    if (!mobileCarousel.contains(e.target)) {
+                        mobileCarouselItems.forEach(card => {
+                            card.classList.remove('flipped');
+                        });
+                    }
+                });
+                
+                console.log('✅ Mobile carousel navigation initialized successfully!');
+            }
+        });
+    </script>
+
+    <!-- Diamond Navigation Handler -->
+    <script>
+        // Handle direct navigation from diamond grid
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we need to scroll to a specific section
+            const targetId = sessionStorage.getItem('scrollToId');
+            const urlHash = window.location.hash.substring(1);
+            
+            const scrollToSection = targetId || urlHash;
+            
+            if (scrollToSection) {
+                setTimeout(() => {
+                    const targetElement = document.getElementById(scrollToSection);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                        
+                        // Add highlight effect
+                        targetElement.style.transition = 'all 0.6s ease';
+                        targetElement.style.transform = 'scale(1.02)';
+                        targetElement.style.boxShadow = '0 10px 30px rgba(217, 10, 44, 0.2)';
+                        
+                        setTimeout(() => {
+                            targetElement.style.transform = 'scale(1)';
+                            targetElement.style.boxShadow = '';
+                        }, 1000);
+                        
+                        console.log(`Scrolled to Products section: ${scrollToSection}`);
+                    }
+                    
+                    // Clear the stored target
+                    sessionStorage.removeItem('scrollToId');
+                }, 500);
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var carousel = $(".carousel"),
+            currdeg  = 0,
+            isDragging = false,
+            startX = 0,
+            startY = 0;
+
+
+
+        // Mouse wheel control
+        $(".carousel-container").on("wheel", function(e) {
+            e.preventDefault();
+            if (e.originalEvent.deltaY > 0) {
+                currdeg = currdeg - 60;
+            } else {
+                currdeg = currdeg + 60;
+            }
+            carousel.css({
+                "-webkit-transform": "rotateY("+currdeg+"deg)",
+                "-moz-transform": "rotateY("+currdeg+"deg)",
+                "-o-transform": "rotateY("+currdeg+"deg)",
+                "transform": "rotateY("+currdeg+"deg)"
+            });
+        });
+
+        // Mouse drag control
+        $(".carousel-container").on("mousedown", function(e) {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            e.preventDefault();
+        });
+
+        $(document).on("mousemove", function(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        $(document).on("mouseup", function(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            var deltaX = e.clientX - startX;
+            var deltaY = e.clientY - startY;
+            
+            // Only trigger if horizontal movement is greater than vertical
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    currdeg = currdeg + 60;
+                } else {
+                    currdeg = currdeg - 60;
+                }
+                carousel.css({
+                    "-webkit-transform": "rotateY("+currdeg+"deg)",
+                    "-moz-transform": "rotateY("+currdeg+"deg)",
+                    "-o-transform": "rotateY("+currdeg+"deg)",
+                    "transform": "rotateY("+currdeg+"deg)"
+                });
+            }
+        });
+
+        // Click on carousel items to flip
+        $(".carousel-item").on("click", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            // Remove flipped class from all other items
+            $(".carousel-item").not(this).removeClass("flipped");
+            
+            // Toggle flipped class for clicked item
+            $(this).toggleClass("flipped");
+        });
+
+    </script>
+    
+    <!-- Accessibility System -->
+    <script src="accessibility-loader.js" defer></script>
+    
+    <!-- Floating Widgets System -->
+    <script src="floating-widgets-btn.js" defer></script>
+    
+</body>
+</html>

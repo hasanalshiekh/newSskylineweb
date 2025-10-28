@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="testimonials-title">Testimonials & Case Studies - SKYLINE Innovation Software</title>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rtl-ltr-support.css">
+    <script src="translation-system.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #777;
+            background: linear-gradient(135deg, #151515 0%, #181818 25%, #1A1A1A 50%, #171717 75%, #161616 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding-top: 80px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Heading Colors */
+        h1, h2, h3, h4, h5, h6 {
+            color: #FDF5E6 !important;
+        }
+
+        /* Paragraph Colors */
+        p {
+            color: #777 !important;
+        }
+
+        /* Card Colors - Dark Theme */
+        .service-card, .industry-card, .contact-card, .highlight-card {
+            background: #131313 !important;
+            border: 1px solid rgba(224, 10, 44, 0.2) !important;
+            color: #ffffff !important;
+        }
+        
+        .service-card h3, .industry-card h3, .contact-card h3, .highlight-card h4 {
+            color: #ffffff !important;
+        }
+        
+        .service-card p, .industry-card p, .contact-card p, .highlight-card p {
+            color: #ffffff !important;
+        }
+        
+        .service-card .feature-item, .industry-card .feature-item {
+            color: #E00A2C !important;
+        }
+        
+        .contact-card p {
+            color: #E00A2C !important;
+        }
+
+
+
+        /* Creative Background Elements */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.05;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #8B0000, #A52A2A);
+            border-radius: 50%;
+            animation-duration: 25s;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #000, #333);
+            transform: rotate(45deg);
+            animation-duration: 30s;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #8B0000, #000);
+            border-radius: 30%;
+            animation-duration: 35s;
+            animation-delay: 10s;
+        }
+
+        .shape:nth-child(4) {
+            top: 80%;
+            left: 20%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #A52A2A, #8B0000);
+            border-radius: 50%;
+            animation-duration: 40s;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(30px) rotate(240deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(196, 30, 58, 0.3);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(196, 30, 58, 0.05));
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 40px rgba(196, 30, 58, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover .stat-number {
+            text-shadow: 0 0 20px rgba(196, 30, 58, 0.5);
+            transform: scale(1.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #C41E3A;
+            display: block;
+            text-shadow: 0 0 20px rgba(196, 30, 58, 0.3);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.03), rgba(196, 30, 58, 0.03));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 1.8rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: rgba(139, 0, 0, 0.7);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.25), 0 0 25px rgba(196, 30, 58, 0.15);
+        }
+
+        .testimonial-card:hover .quote-icon {
+            transform: scale(1.15) rotate(-5deg);
+            background: linear-gradient(135deg, #A52A2A, #8B0000);
+            box-shadow: 0 0 15px rgba(196, 30, 58, 0.4);
+        }
+
+        .testimonial-card:hover .author-avatar {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+        }
+
+        .testimonial-card:hover .star {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 5px #FFD700);
+        }
+
+        .testimonial-card:hover::before {
+            left: 100%;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+            justify-content: flex-start;
+            direction: ltr;
+        }
+
+        .star {
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .company-logo {
+            font-size: 0.8rem;
+            color: #C41E3A;
+            font-weight: 600;
+        }
+
+        /* Case Studies Section */
+        .case-studies-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(196, 30, 58, 0.05));
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+            grid-auto-rows: 1fr;
+        }
+
+        .case-study-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 450px;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(139, 0, 0, 0.8);
+            box-shadow: 0 25px 50px rgba(139, 0, 0, 0.3), 0 0 30px rgba(196, 30, 58, 0.2);
+        }
+
+        .case-study-card:hover .case-study-icon {
+            transform: scale(1.2) rotate(10deg);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .case-study-card:hover .case-study-title {
+            color: #8B0000;
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+        }
+
+        .case-study-card:hover .metric-value {
+            transform: scale(1.1);
+            color: #A52A2A;
+            text-shadow: 0 0 10px rgba(196, 30, 58, 0.4);
+        }
+
+        .case-study-header {
+            height: 120px;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .case-study-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
+        }
+
+        .case-study-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
+
+        .case-study-category {
+            display: inline-block;
+            background: rgba(196, 30, 58, 0.1);
+            color: #C41E3A;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            align-self: flex-start;
+            flex-shrink: 0;
+        }
+
+        .case-study-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            min-height: 2.6rem;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .case-study-description {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            flex-grow: 1;
+            min-height: 3.4rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .case-study-metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(139, 0, 0, 0.05);
+            border-radius: 8px;
+            flex-shrink: 0;
+            min-height: 60px;
+            align-items: center;
+        }
+
+        .metric {
+            text-align: center;
+            flex: 1;
+        }
+
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #C41E3A;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 0.2rem;
+            line-height: 1.1;
+        }
+
+        .case-study-footer {
+            margin-top: auto;
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+        }
+
+        .case-study-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            width: 100%;
+            height: 42px;
+            min-height: 42px;
+            max-height: 42px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            align-self: stretch;
+        }
+
+        .case-study-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
+            background: linear-gradient(135deg, #A52A2A, #8B0000);
+        }
+
+        .case-study-cta:active {
+            transform: translateY(-1px) scale(1.02);
+            transition: all 0.1s ease;
+        }
+
+        /* Video Testimonials Section */
+        .video-testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.03), rgba(196, 30, 58, 0.03));
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(139, 0, 0, 0.3), 0 0 30px rgba(196, 30, 58, 0.2);
+            border-color: rgba(139, 0, 0, 0.6);
+        }
+
+        .video-card:hover .video-author-avatar {
+            transform: scale(1.15);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+        }
+
+        .video-card:hover .video-title {
+            color: #8B0000;
+            text-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .video-thumbnail:hover::before {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #C41E3A;
+            transition: all 0.3s ease;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+
+        .video-thumbnail:hover .play-button {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .video-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .video-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .video-author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .video-author-info h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.2rem;
+        }
+
+        .video-author-info p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(196, 30, 58, 0.05));
+        }
+
+        .cta-container {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn.primary {
+            background: linear-gradient(135deg, #C41E3A, #8B0000);
+            color: white;
+        }
+
+        .cta-btn.secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: 2px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-btn.primary:hover {
+            background: linear-gradient(135deg, #A52A2A, #8B0000);
+            box-shadow: 0 25px 50px rgba(196, 30, 58, 0.4);
+        }
+
+        .cta-btn.secondary:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(139, 0, 0, 0.8);
+            color: #8B0000;
+            box-shadow: 0 25px 50px rgba(139, 0, 0, 0.2);
+        }
+
+        .cta-btn:active {
+            transform: translateY(-2px) scale(1.02);
+            transition: all 0.1s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .case-studies-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .testimonials-grid,
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Mouse Dust Effect */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(196, 30, 58, 0.8) 0%, rgba(139, 0, 0, 0.4) 50%, transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: particleFloat 2s ease-out forwards;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.3) translateY(-60px);
+                opacity: 0;
+            }
+        }
+
+        /* Loading Animation for Cards */
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonial-card,
+        .case-study-card,
+        .video-card {
+            animation: cardEntrance 0.6s ease-out forwards;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+        .testimonial-card:nth-child(5) { animation-delay: 0.5s; }
+        .testimonial-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .case-study-card:nth-child(1) { animation-delay: 0.1s; }
+        .case-study-card:nth-child(2) { animation-delay: 0.2s; }
+        .case-study-card:nth-child(3) { animation-delay: 0.3s; }
+        .case-study-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .video-card:nth-child(1) { animation-delay: 0.1s; }
+        .video-card:nth-child(2) { animation-delay: 0.2s; }
+        .video-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Include Navbar -->
+    <script src="navbar-include.js"></script>
+
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-translate="testimonials-hero-title">Success Stories</h1>
+            <p data-translate="testimonials-hero-description">Discover how SKYLINE has transformed businesses across industries through innovative software solutions and exceptional service delivery.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label" data-translate="testimonials-stat-1">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label" data-translate="testimonials-stat-2">Success Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label" data-translate="testimonials-stat-3">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label" data-translate="testimonials-stat-4">Industries Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="testimonials-section-title">Customer Testimonials</h2>
+                <p class="section-subtitle" data-translate="testimonials-section-subtitle">Hear what our clients say about their experience working with SKYLINE</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text" data-translate="testimonial-1-text">
+                            "SKYLINE completely transformed our business operations with their ERP solutions. The implementation was seamless, and their support team is exceptional. We've seen a 40% increase in efficiency since going live."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4 data-translate="testimonial-1-name">John Davidson</h4>
+                            <p data-translate="testimonial-1-position">CEO, Tech Corp Industries</p>
+                            <span class="company-logo" data-translate="testimonial-1-company">🏢 Fortune 500 Company</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text" data-translate="testimonial-2-text">
+                            "The custom CRM system developed by SKYLINE revolutionized how we manage customer relationships. Our sales team productivity increased by 60%, and customer satisfaction scores are at an all-time high."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4 data-translate="testimonial-2-name">Sarah Mitchell</h4>
+                            <p data-translate="testimonial-2-position">VP of Sales, Global Tech Solutions</p>
+                            <span class="company-logo" data-translate="testimonial-2-company">🚀 Tech Startup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text" data-translate="testimonial-3-text">
+                            "SKYLINE's e-commerce platform helped us expand our digital presence globally. The scalable architecture and robust features supported our 300% growth over the past two years."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4 data-translate="testimonial-3-name">Michael Rodriguez</h4>
+                            <p data-translate="testimonial-3-position">Founder, Retail Max</p>
+                            <span class="company-logo" data-translate="testimonial-3-company">🛒 E-commerce Leader</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text" data-translate="testimonial-4-text">
+                            "SKYLINE's AI-powered analytics solution gave us unprecedented insights into our operations. We optimized our supply chain and reduced costs by 25% while improving delivery times."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LW</div>
+                        <div class="author-info">
+                            <h4 data-translate="testimonial-4-name">Lisa Wang</h4>
+                            <p data-translate="testimonial-4-position">Operations Director, LogiFlow International</p>
+                            <span class="company-logo" data-translate="testimonial-4-company">📦 Logistics Giant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text" data-translate="testimonial-5-text">
+                            "SKYLINE's mobile app development exceeded our expectations. The user-friendly interface and powerful features led to over one million downloads and a 4.8-star rating in app stores."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DR</div>
+                        <div class="author-info">
+                            <h4 data-translate="testimonial-5-name">David Roberts</h4>
+                            <p data-translate="testimonial-5-position">Product Manager, Finance App</p>
+                            <span class="company-logo" data-translate="testimonial-5-company">💰 FinTech Innovator</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="testimonial-text" data-translate="testimonial-6-text">
+                            "SKYLINE's cloud migration services were seamless and efficient. We reduced IT costs by 35% while significantly improving system reliability and performance."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div class="author-info">
+                            <h4 data-translate="testimonial-6-name">Amanda Kim</h4>
+                            <p data-translate="testimonial-6-position">CTO, HealthTech Solutions</p>
+                            <span class="company-logo" data-translate="testimonial-6-company">🏥 Healthcare Leader</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="case-studies-section-title">Case Studies</h2>
+                <p class="section-subtitle" data-translate="case-studies-section-subtitle">Detailed success stories showcasing our expertise and impact</p>
+            </div>
+
+            <div class="case-studies-grid">
+                <!-- Case Study 1 -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-category" data-translate="case-study-1-category">ERP Implementation</span>
+                        <h3 class="case-study-title" data-translate="case-study-1-title">Manufacturing Giant Streamlines Operations</h3>
+                        <p class="case-study-description" data-translate="case-study-1-description">
+                            A leading manufacturing company with over 5,000 employees needed to integrate their fragmented systems. Our comprehensive ERP solutions unified their operations across 15 locations.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label" data-translate="case-study-1-metric-1">Cost Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">60%</span>
+                                <span class="metric-label" data-translate="case-study-1-metric-2">Efficiency Increase</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">90%</span>
+                                <span class="metric-label" data-translate="case-study-1-metric-3">User Adoption</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-footer">
+                        <a href="#contact" class="case-study-cta">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-translate="case-study-cta">Read Full Case Study</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-category" data-translate="case-study-2-category">E-commerce Platform</span>
+                        <h3 class="case-study-title" data-translate="case-study-2-title">Retail Chain Goes Digital</h3>
+                        <p class="case-study-description" data-translate="case-study-2-description">
+                            A traditional retail chain with over 200 stores wanted to establish a strong digital presence. Our custom e-commerce platform enabled seamless omnichannel experiences.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">300%</span>
+                                <span class="metric-label" data-translate="case-study-2-metric-1">E-commerce Sales</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">50%</span>
+                                <span class="metric-label" data-translate="case-study-2-metric-2">New Customers</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">25%</span>
+                                <span class="metric-label" data-translate="case-study-2-metric-3">Revenue Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-footer">
+                        <a href="#contact" class="case-study-cta">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-translate="case-study-cta">Read Full Case Study</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-category" data-translate="case-study-3-category">AI & Analytics</span>
+                        <h3 class="case-study-title" data-translate="case-study-3-title">Predictive Analytics for Financial Services</h3>
+                        <p class="case-study-description" data-translate="case-study-3-description">
+                            A major bank needed advanced analytics to improve risk assessment and fraud detection. Our AI-powered solutions process millions of transactions daily.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label" data-translate="case-study-3-metric-1">Fraud Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">30%</span>
+                                <span class="metric-label" data-translate="case-study-3-metric-2">Risk Improvement</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$50M</span>
+                                <span class="metric-label" data-translate="case-study-3-metric-3">Savings</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="case-study-cta">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-translate="case-study-cta">Read Full Case Study</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-category" data-translate="case-study-4-category">Mobile Application</span>
+                        <h3 class="case-study-title" data-translate="case-study-4-title">Healthcare App Reaches One Million Users</h3>
+                        <p class="case-study-description" data-translate="case-study-4-description">
+                            A healthcare startup needed a comprehensive mobile app for patient management. Our solutions now serve over one million users across 20 countries.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">1M+</span>
+                                <span class="metric-label" data-translate="case-study-4-metric-1">Active Users</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.8★</span>
+                                <span class="metric-label" data-translate="case-study-4-metric-2">App Rating</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">20</span>
+                                <span class="metric-label" data-translate="case-study-4-metric-3">Countries</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="case-study-cta">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-translate="case-study-cta">Read Full Case Study</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials Section -->
+    <section class="video-testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="video-testimonials-section-title">Video Testimonials</h2>
+                <p class="section-subtitle" data-translate="video-testimonials-section-subtitle">Watch our clients share their success stories</p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('video1')">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title" data-translate="video-1-title">CEO Testimonial - Digital Transformation Success</h4>
+                        <p class="video-description" data-translate="video-1-description">John Davidson, CEO of Tech Corp Industries, shares how SKYLINE's ERP solutions transformed their operations.</p>
+                        <div class="video-author">
+                            <div class="video-author-avatar">JD</div>
+                            <div class="video-author-info">
+                                <h5 data-translate="video-1-author-name">John Davidson</h5>
+                                <p data-translate="video-1-author-position">CEO, Tech Corp Industries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('video2')">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title" data-translate="video-2-title">CRM Success Story - Sales Team Transformation</h4>
+                        <p class="video-description" data-translate="video-2-description">Sarah Mitchell explains how our custom CRM system boosted their sales productivity by 60%.</p>
+                        <div class="video-author">
+                            <div class="video-author-avatar">SM</div>
+                            <div class="video-author-info">
+                                <h5 data-translate="video-2-author-name">Sarah Mitchell</h5>
+                                <p data-translate="video-2-author-position">VP of Sales, Global Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('video3')">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title" data-translate="video-3-title">E-commerce Platform - Global Expansion</h4>
+                        <p class="video-description" data-translate="video-3-description">Michael Rodriguez discusses how SKYLINE's e-commerce solutions enabled 300% growth.</p>
+                        <div class="video-author">
+                            <div class="video-author-avatar">MR</div>
+                            <div class="video-author-info">
+                                <h5 data-translate="video-3-author-name">Michael Rodriguez</h5>
+                                <p data-translate="video-3-author-position">Founder, Retail Max</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title" data-translate="testimonials-cta-title">Ready to Write Your Success Story?</h2>
+                <p class="cta-description" data-translate="testimonials-cta-description">Join hundreds of satisfied clients who have transformed their businesses with SKYLINE's innovative solutions.</p>
+                <div class="cta-buttons">
+                    <a href="contact-us.html" class="cta-btn primary">
+                        <i class="fas fa-rocket"></i>
+                        <span data-translate="testimonials-cta-button-1">Start Your Project</span>
+                    </a>
+                    <a href="contact-us.html" class="cta-btn secondary">
+                        <i class="fas fa-calendar"></i>
+                        <span data-translate="testimonials-cta-button-2">Schedule Consultation</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <script src="footer-include.js"></script>
+    
+    <!-- Accessibility Pack -->
+    <script src="accessibility-pack.js"></script>
+    
+    <!-- Floating Action Button functionality is included in accessibility-pack.js -->
+
+    <script>
+        // Mouse Dust Effect
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.7) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+
+        // Video Play Function
+        function playVideo(videoId) {
+            alert(`Playing ${videoId} - In the real application, this would open a video player or popup with the testimonial video.`);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const value = +counter.getAttribute('data-target') || +counter.innerText.replace(/[^0-9]/g, '');
+                    const data = +counter.innerText.replace(/[^0-9]/g, '') || 0;
+                    
+                    const time = value / speed;
+                    
+                    if (data < value) {
+                        counter.innerText = Math.ceil(data + time) + counter.innerText.replace(/[0-9]/g, '');
+                        setTimeout(animate, 1);
+                    } else {
+                        counter.innerText = counter.getAttribute('data-original') || counter.innerText;
+                    }
+                }
+                
+                // Store original text
+                counter.setAttribute('data-original', counter.innerText);
+                counter.setAttribute('data-target', counter.innerText.replace(/[^0-9]/g, ''));
+                animate();
+            });
+        }
+
+        // Trigger counter animation when hero section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            observer.observe(heroSection);
+        }
+
+        // Add loading states and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add staggered animation to cards
+            const cards = document.querySelectorAll('.testimonial-card, .case-study-card, .video-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+    
+    <!-- Page Loader -->
+    <script src="page-loader.js"></script>
+    
+    <!-- Accessibility System -->
+    <script src="accessibility-loader.js" defer></script>
+    
+    <!-- Floating Widgets System -->
+    <script src="floating-widgets-btn.js" defer></script>
+    
+</body>
+</html>

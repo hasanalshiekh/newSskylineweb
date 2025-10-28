@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & News - SKYLINE Innovation Software</title>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rtl-ltr-support.css">
+    <script src="translation-system.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #777;
+            background: linear-gradient(135deg, #151515 0%, #181818 25%, #1A1A1A 50%, #171717 75%, #161616 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding-top: 80px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Heading Colors */
+        h1, h2, h3, h4, h5, h6 {
+            color: #FDF5E6 !important;
+        }
+
+        /* Paragraph Colors */
+        p {
+            color: #777 !important;
+        }
+
+        /* Card Colors - Dark Theme */
+        .service-card, .industry-card, .contact-card, .highlight-card {
+            background: #131313 !important;
+            border: 1px solid rgba(224, 10, 44, 0.2) !important;
+            color: #ffffff !important;
+        }
+        
+        .service-card h3, .industry-card h3, .contact-card h3, .highlight-card h4 {
+            color: #ffffff !important;
+        }
+        
+        .service-card p, .industry-card p, .contact-card p, .highlight-card p {
+            color: #ffffff !important;
+        }
+        
+        .service-card .feature-item, .industry-card .feature-item {
+            color: #E00A2C !important;
+        }
+        
+        .contact-card p {
+            color: #E00A2C !important;
+        }
+
+
+
+        /* Floating Background Shapes */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #8B0000, #A52A2A);
+            border-radius: 50%;
+            animation-duration: 25s;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #000, #333);
+            transform: rotate(45deg);
+            animation-duration: 30s;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #8B0000, #000);
+            border-radius: 30%;
+            animation-duration: 35s;
+            animation-delay: 10s;
+        }
+
+        .shape:nth-child(4) {
+            top: 80%;
+            left: 20%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #A52A2A, #8B0000);
+            border-radius: 50%;
+            animation-duration: 40s;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(15px) rotate(240deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg);
+            }
+        }
+
+        /* Mouse Dust Effect */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #8B0000, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: particleFloat 2s ease-out forwards;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0px) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Particle Animation Styles */
+        #particles-style-01 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particles-js-canvas-el {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8B0000 0%, #000 30%, #000 70%, #8B0000 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #e9ecef;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: #8B0000;
+            color: white;
+            border-color: #8B0000;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            border-radius: 2px;
+        }
+
+        /* News Grid */
+        .news-grid {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .news-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: visible;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e9ecef;
+            position: relative;
+            height: 520px;
+            display: flex;
+            flex-direction: column;
+            perspective: 1200px;
+            transform-style: preserve-3d;
+            z-index: 1;
+        }
+
+        .news-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(139, 0, 0, 0.15);
+        }
+
+        .news-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+            transform-style: preserve-3d;
+            transform-origin: center center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover .news-card-inner {
+            transform: rotateY(180deg) scale(1.02);
+        }
+
+        .news-card-front, .news-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card-back {
+            background: linear-gradient(135deg, #8B0000 0%, #2d1b69 50%, #000 100%);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-card-back::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .news-card-back h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .news-card-back p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-align: center;
+            max-width: 280px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .news-card-back .read-more {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .news-card-back .read-more:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+            transform: translateY(-3px) scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Enhanced flip card animations */
+        .news-card {
+            cursor: pointer;
+        }
+
+        /* Smooth entrance animation */
+        .news-card {
+            animation: cardEntrance 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes cardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation for multiple cards */
+        .news-card:nth-child(1) { animation-delay: 0.1s; }
+        .news-card:nth-child(2) { animation-delay: 0.2s; }
+        .news-card:nth-child(3) { animation-delay: 0.3s; }
+        .news-card:nth-child(4) { animation-delay: 0.4s; }
+        .news-card:nth-child(5) { animation-delay: 0.5s; }
+        .news-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Glow effect on hover */
+        .news-card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #8B0000, #C41E3A, #8B0000);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .news-card:hover::after {
+            opacity: 0.7;
+            animation: glowPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 0.4; }
+        }
+
+        .news-image {
+            height: 160px;
+            background: linear-gradient(135deg, #8B0000 0%, #C41E3A 50%, #8B0000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            position: relative;
+            overflow: visible;
+            flex-shrink: 0;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .news-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .news-card:hover .news-image::before {
+            left: 100%;
+        }
+
+        .news-image i {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover .news-image i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .news-content {
+            padding: 1.2rem;
+            height: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 320px;
+            overflow: visible;
+        }
+
+        .news-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B0000, #C41E3A);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+        }
+
+        .news-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .news-excerpt {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            flex: 1;
+            text-align: justify;
+            overflow: visible;
+            display: block;
+        }
+
+        /* Events Timeline */
+        .events-timeline {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .timeline-container {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #8B0000, #C41E3A, #8B0000);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: center;
+        }
+
+        .marker-dot {
+            width: 20px;
+            height: 20px;
+            background: #8B0000;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+            margin: 0 auto 0.5rem;
+        }
+
+        .marker-date {
+            background: #8B0000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: calc(50% - 60px);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 60px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 60px;
+        }
+
+        .timeline-content h3 {
+            color: #8B0000;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, #8B0000 0%, #000 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background: #C41E3A;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #A01729;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .news-grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin: 0;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .news-grid-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .floating-shapes {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .news-card {
+                height: 480px;
+            }
+
+            .news-image {
+                height: 140px;
+                font-size: 2rem;
+            }
+
+            .news-content {
+                padding: 1rem;
+                min-height: 280px;
+                flex: 1;
+                overflow: visible;
+            }
+
+            .news-title {
+                font-size: 0.9rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .news-excerpt {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+            }
+
+            .news-category {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.8rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .news-card-back {
+                padding: 2rem 1.5rem;
+            }
+
+            .news-card-back h4 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+
+            .news-card-back p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+                max-width: 250px;
+            }
+
+            .news-card-back .read-more {
+                padding: 0.8rem 2rem;
+                font-size: 0.8rem;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+
+            .news-card {
+                height: 450px;
+            }
+
+            .news-image {
+                height: 120px;
+                font-size: 1.8rem;
+            }
+
+            .news-content {
+                padding: 0.8rem;
+                min-height: 260px;
+            }
+
+            .news-title {
+                font-size: 0.85rem;
+            }
+
+            .news-excerpt {
+                font-size: 0.75rem;
+                line-height: 1.4;
+            }
+
+            .news-category {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Particle Animation -->
+        <div id="particles-style-01" class="position-absolute h-100 top-0 left-0 w-100" data-particle="true" data-particle-options="{ &quot;particles&quot;: { &quot;number&quot;: { &quot;value&quot;: 80, &quot;density&quot;: { &quot;enable&quot;: true, &quot;value_area&quot;: 800 } }, &quot;color&quot;: { &quot;value&quot;: &quot;#DC2626&quot; }, &quot;shape&quot;: { &quot;type&quot;: &quot;circle&quot;, &quot;stroke&quot;: { &quot;width&quot;: 0, &quot;color&quot;: &quot;#DC2626&quot; }, &quot;polygon&quot;: { &quot;nb_sides&quot;: 5 }, &quot;image&quot;: { &quot;src&quot;: &quot;img/github.svg&quot;, &quot;width&quot;: 100, &quot;height&quot;: 100 } }, &quot;opacity&quot;: { &quot;value&quot;: 0.6, &quot;random&quot;: false, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 1, &quot;opacity_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;size&quot;: { &quot;value&quot;: 4, &quot;random&quot;: true, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 40, &quot;size_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;line_linked&quot;: { &quot;enable&quot;: true, &quot;distance&quot;: 150, &quot;color&quot;: &quot;#DC2626&quot;, &quot;opacity&quot;: 0.8, &quot;width&quot;: 1 }, &quot;move&quot;: { &quot;enable&quot;: true, &quot;speed&quot;: 6, &quot;direction&quot;: &quot;none&quot;, &quot;random&quot;: false, &quot;straight&quot;: false, &quot;out_mode&quot;: &quot;out&quot;, &quot;bounce&quot;: false, &quot;attract&quot;: { &quot;enable&quot;: false, &quot;rotateX&quot;: 600, &quot;rotateY&quot;: 1200 } } }, &quot;interactivity&quot;: { &quot;detect_on&quot;: &quot;canvas&quot;, &quot;events&quot;: { &quot;onhover&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;repulse&quot; }, &quot;onclick&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;push&quot; }, &quot;resize&quot;: true }, &quot;modes&quot;: { &quot;grab&quot;: { &quot;distance&quot;: 400, &quot;line_linked&quot;: { &quot;opacity&quot;: 1 } }, &quot;bubble&quot;: { &quot;distance&quot;: 400, &quot;size&quot;: 40, &quot;duration&quot;: 2, &quot;opacity&quot;: 8, &quot;speed&quot;: 3 }, &quot;repulse&quot;: { &quot;distance&quot;: 200, &quot;duration&quot;: 0.4 }, &quot;push&quot;: { &quot;particles_nb&quot;: 4 }, &quot;remove&quot;: { &quot;particles_nb&quot;: 2 } } }, &quot;retina_detect&quot;: true}">
+            <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+        </div>
+        <div class="container">
+            <h1 data-translate="events-hero-title">Events & News</h1>
+            <p data-translate="events-hero-description">Stay updated with the latest news, events, and insights from SKYLINE Innovation Software</p>
+        </div>
+    </section>
+
+    <!-- Events Timeline -->
+    <section class="events-timeline">
+        <div class="container">
+            <h2 class="section-title" data-translate="events-timeline-title">Upcoming Events</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">Apr 15, 2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-translate="event-1-title">SKYLINE Tech Conference 2024</h3>
+                        <p data-translate="event-1-description">Join us for our annual tech conference featuring industry leaders, innovative solutions, and networking opportunities with tech professionals from across the region.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">May 20, 2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-translate="event-2-title">AI & Machine Learning Workshop</h3>
+                        <p data-translate="event-2-description">A hands-on workshop exploring the latest developments in AI and machine learning, with practical applications for business solutions.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">Jun 10, 2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-translate="event-3-title">Cloud Solutions Seminar</h3>
+                        <p data-translate="event-3-description">Discover how cloud computing can transform your business operations through our comprehensive seminar on modern cloud solutions and best practices.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">Jul 25, 2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 data-translate="event-4-title">Innovation Expo</h3>
+                        <p data-translate="event-4-description">Experience the future of software development at our Innovation Expo, featuring cutting-edge technologies and revolutionary business solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-grid">
+        <div class="container">
+            <h2 class="section-title" data-translate="news-grid-title">Latest News & Updates</h2>
+            
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <div class="filter-tab active" data-filter="all" data-translate="filter-all">All</div>
+                <div class="filter-tab" data-filter="news" data-translate="filter-news">News</div>
+                <div class="filter-tab" data-filter="updates" data-translate="filter-updates">Updates</div>
+                <div class="filter-tab" data-filter="blog" data-translate="filter-blog">Blog</div>
+                <div class="filter-tab" data-filter="events" data-translate="filter-events">Events</div>
+            </div>
+
+            <div class="news-grid-container">
+                <div class="news-card" data-category="news">
+                    <div class="news-card-inner">
+                        <div class="news-card-front">
+                            <div class="news-image">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category" data-translate="news-category-1">News</span>
+                                <h3 class="news-title" data-translate="news-1-title">SKYLINE Launches New AI-Powered Analytics Platform</h3>
+                                <p class="news-excerpt" data-translate="news-1-excerpt">Our latest innovation combines machine learning with real-time data processing to provide businesses with unprecedented insights into their operations. This advanced platform revolutionizes how companies analyze their data, offering predictive analytics, automated reporting, and intelligent recommendations that drive strategic decision-making and improve overall business performance.</p>
+                            </div>
+                        </div>
+                        <div class="news-card-back">
+                            <h4 data-translate="news-1-back-title">AI Analytics Platform</h4>
+                            <p data-translate="news-1-back-description">Discover how our advanced AI technology revolutionizes business analytics and delivers instant insights that drive growth and efficiency.</p>
+                            <a href="#" class="read-more" data-translate="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" data-category="updates">
+                    <div class="news-card-inner">
+                        <div class="news-card-front">
+                            <div class="news-image">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category" data-translate="news-category-2">Updates</span>
+                                <h3 class="news-title" data-translate="news-2-title">Enhanced Security Features in Latest Release</h3>
+                                <p class="news-excerpt" data-translate="news-2-excerpt">We have implemented advanced security protocols and multi-factor authentication to ensure your data remains protected at all times. Our comprehensive security framework includes end-to-end encryption, biometric authentication options, real-time threat detection, automated security auditing, and advanced firewall protection to provide enterprise-level security for all your sensitive business information and customer data.</p>
+                            </div>
+                        </div>
+                        <div class="news-card-back">
+                            <h4 data-translate="news-2-back-title">Security Enhancement</h4>
+                            <p data-translate="news-2-back-description">Learn about our latest security updates including multi-factor authentication, advanced encryption, and comprehensive data protection measures.</p>
+                            <a href="#" class="read-more" data-translate="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" data-category="blog">
+                    <div class="news-card-inner">
+                        <div class="news-card-front">
+                            <div class="news-image">
+                                <i class="fas fa-blog"></i>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category" data-translate="news-category-3">Blog</span>
+                                <h3 class="news-title" data-translate="news-3-title">Future of Software Development: Trends to Watch</h3>
+                                <p class="news-excerpt" data-translate="news-3-excerpt">Explore emerging trends in software development and how they're shaping the future of technology and business solutions. From AI integration to low-code platforms, microservices architecture, cloud-native development, and progressive web applications - discover the groundbreaking innovations that will define the next decade of software engineering and transform how businesses operate in the digital landscape.</p>
+                            </div>
+                        </div>
+                        <div class="news-card-back">
+                            <h4 data-translate="news-3-back-title">Future Trends</h4>
+                            <p data-translate="news-3-back-description">Discover the latest trends in software development including AI integration, cloud computing, and emerging technologies that are transforming the industry.</p>
+                            <a href="#" class="read-more" data-translate="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" data-category="events">
+                    <div class="news-card-inner">
+                        <div class="news-card-front">
+                            <div class="news-image">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category" data-translate="news-category-4">Events</span>
+                                <h3 class="news-title" data-translate="news-4-title">Success Story: Client Case Study Showcase</h3>
+                                <p class="news-excerpt" data-translate="news-4-excerpt">Learn how we helped a major retail company increase their operational efficiency by 40% through our comprehensive custom software solutions. This detailed case study showcases our proven digital transformation approach, including advanced process automation, intelligent inventory management optimization, enhanced customer experience, and real-time analytics implementation with data-driven strategic decision-making that resulted in significant cost savings and improved performance metrics.</p>
+                            </div>
+                        </div>
+                        <div class="news-card-back">
+                            <h4 data-translate="news-4-back-title">Success Story</h4>
+                            <p data-translate="news-4-back-description">Discover how our innovative solutions helped a major retail company achieve 40% efficiency improvement and transform their business operations.</p>
+                            <a href="#" class="read-more" data-translate="view-case-study">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" data-category="news">
+                    <div class="news-card-inner">
+                        <div class="news-card-front">
+                            <div class="news-image">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category" data-translate="news-category-5">News</span>
+                                <h3 class="news-title" data-translate="news-5-title">SKYLINE Wins Best Software Innovation Award 2024</h3>
+                                <p class="news-excerpt" data-translate="news-5-excerpt">We are proud to announce that SKYLINE has been recognized for excellence in software innovation at the prestigious annual Technology Awards ceremony. This distinguished award acknowledges our pioneering work in AI and advanced cloud computing solutions, machine learning implementations, and our unwavering commitment to delivering innovative software that transforms businesses across various industries and drives digital transformation initiatives.</p>
+                            </div>
+                        </div>
+                        <div class="news-card-back">
+                            <h4 data-translate="news-5-back-title">Award Recognition</h4>
+                            <p data-translate="news-5-back-description">Celebrate with us as we receive the prestigious Best Software Innovation Award 2024, recognizing our commitment to excellence and innovation.</p>
+                            <a href="#" class="read-more" data-translate="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" data-category="updates">
+                    <div class="news-card-inner">
+                        <div class="news-card-front">
+                            <div class="news-image">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category" data-translate="news-category-6">Updates</span>
+                                <h3 class="news-title" data-translate="news-6-title">New Mobile App Features Available Now</h3>
+                                <p class="news-excerpt" data-translate="news-6-excerpt">Our mobile app has been comprehensively updated with exciting new features including offline capabilities, enhanced security protocols, and significantly improved user interface design. The latest release offers elegant dark mode support, advanced instant notification system, sophisticated biometric authentication, real-time data synchronization, and a completely redesigned dashboard that provides superior accessibility and exceptional user experience across all mobile devices and platforms.</p>
+                            </div>
+                        </div>
+                        <div class="news-card-back">
+                            <h4 data-translate="news-6-back-title">Mobile App Update</h4>
+                            <p data-translate="news-6-back-description">Experience the latest mobile app features including offline mode, enhanced security, and a completely redesigned user interface for better performance.</p>
+                            <a href="#" class="read-more" data-translate="download-now">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 data-translate="newsletter-title">Stay Updated</h2>
+            <p data-translate="newsletter-description">Subscribe to our newsletter and don't miss the latest news and updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required data-translate-placeholder="newsletter-placeholder">
+                <button type="submit" data-translate="newsletter-subscribe">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Navbar Include Script -->
+    <script src="navbar-include.js"></script>
+    
+    <!-- Footer Include Script -->
+    <script src="footer-include.js"></script>
+    
+    <!-- Accessibility Pack -->
+    <script src="accessibility-pack.js"></script>
+    
+    <!-- Floating Action Button functionality is included in accessibility-pack.js -->
+
+    <script>
+        // Helper function to get translation from the translation system
+        function getTranslation(key) {
+            if (typeof window.translationSystem !== 'undefined' && window.translationSystem) {
+                return window.translationSystem.getTranslation(key);
+            }
+            return null;
+        }
+
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const newsCards = document.querySelectorAll('.news-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const filterValue = tab.getAttribute('data-filter');
+
+                newsCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        card.style.animation = 'cardEntrance 0.6s ease-out forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Newsletter form functionality
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    alert(getTranslation('newsletter-success') || 'Thank you for subscribing to our newsletter!');
+                    this.reset();
+                }
+            });
+        }
+
+        // Add parallax effect to floating shapes
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+
+            shapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                shape.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Mouse Dust Effect
+        document.addEventListener('mousemove', function (e) {
+            if (Math.random() > 0.9) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: radial-gradient(circle, #8B0000, transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                left: ${x}px;
+                top: ${y}px;
+                animation: particleFloat 2s ease-out forwards;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 2000);
+        }
+    </script>
+    
+    <!-- Particle Animation Script -->
+    <script>
+        // Initialize particle animation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if particles.js is loaded
+            if (typeof particlesJS !== 'undefined') {
+                // Initialize particles with the configuration from data attribute
+                const particleElement = document.getElementById('particles-style-01');
+                if (particleElement) {
+                    const config = JSON.parse(particleElement.getAttribute('data-particle-options'));
+                    particlesJS('particles-style-01', config);
+                    console.log('Particle animation initialized successfully on events & news page!');
+                }
+            } else {
+                console.warn('Particles.js library not loaded');
+            }
+        });
+    </script>
+    
+    <!-- Page Loader -->
+    <script src="page-loader.js"></script>
+    
+    <!-- Accessibility System -->
+    <script src="accessibility-loader.js" defer></script>
+    
+    <!-- Floating Widgets System -->
+    <script src="floating-widgets-btn.js" defer></script>
+    
+</body>
+</html>

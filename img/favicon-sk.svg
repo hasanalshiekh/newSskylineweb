@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .bg-circle {
+        fill: url(#radial-gradient);
+      }
+      .text-sk {
+        fill: white;
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 32px;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C41E3A"/>
+      <stop offset="100%" stop-color="#8B0000"/>
+    </radialGradient>
+  </defs>
+  <circle class="bg-circle" cx="50" cy="50" r="45"/>
+  <text class="text-sk" x="50" y="50">SK</text>
+</svg>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار لوحة إمكانية الوصول بدون حاشية علوية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .test-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #D90A2C;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .test-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #D90A2C;
+        }
+        
+        .test-button {
+            background: linear-gradient(135deg, #D90A2C, #A52A2A);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 10, 44, 0.3);
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .test-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 10px;
+        }
+        
+        .test-link {
+            color: #1E90FF;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+        
+        .test-link:hover {
+            color: #4169E1;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-content">
+        <h1>🧪 اختبار لوحة إمكانية الوصول بدون حاشية علوية</h1>
+        
+        <div class="instructions">
+            <h3>📋 تعليمات الاختبار:</h3>
+            <ol>
+                <li>اضغط على زر "اختبار لوحة إمكانية الوصول" في الأسفل</li>
+                <li>تأكد أن المحتوى يبدأ من أعلى اللوحة مباشرة</li>
+                <li>تأكد عدم وجود حاشية سوداء في الأعلى</li>
+                <li>جرب الأدوات المختلفة للتأكد من عملها</li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎯 اختبار المحتوى:</h3>
+            <p>هذا نص تجريبي لاختبار أدوات إمكانية الوصول. يمكنك استخدام الأدوات المختلفة لتحسين تجربة القراءة.</p>
+            
+            <h4>روابط تجريبية:</h4>
+            <a href="#" class="test-link">رابط تجريبي 1</a>
+            <a href="#" class="test-link">رابط تجريبي 2</a>
+            <a href="#" class="test-link">رابط تجريبي 3</a>
+            
+            <h4>صور تجريبية:</h4>
+            <img src="https://via.placeholder.com/200x150/FF6B6B/FFFFFF?text=صورة+1" alt="صورة تجريبية 1" class="test-image">
+            <img src="https://via.placeholder.com/200x150/4ECDC4/FFFFFF?text=صورة+2" alt="صورة تجريبية 2" class="test-image">
+            <img src="https://via.placeholder.com/200x150/45B7D1/FFFFFF?text=صورة+3" alt="صورة تجريبية 3" class="test-image">
+        </div>
+        
+        <div class="test-section">
+            <h3>🔧 أدوات الاختبار:</h3>
+            <button class="test-button" onclick="testAccessibilityPanel()">
+                <i class="fas fa-universal-access"></i> اختبار لوحة إمكانية الوصول
+            </button>
+            
+            <button class="test-button" onclick="testCursor()">
+                <i class="fas fa-mouse-pointer"></i> اختبار المؤشر الكبير
+            </button>
+            
+            <button class="test-button" onclick="testTools()">
+                <i class="fas fa-tools"></i> اختبار الأدوات
+            </button>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 النتائج المتوقعة:</h3>
+            <ul>
+                <li>✅ المحتوى يبدأ من أعلى اللوحة مباشرة</li>
+                <li>✅ لا توجد حاشية سوداء في الأعلى</li>
+                <li>✅ الهيدر الأحمر في الأعلى مباشرة</li>
+                <li>✅ الأدوات تظهر تحت الهيدر مباشرة</li>
+                <li>✅ التصميم متسق ومنظم</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- تضمين ملفات JavaScript -->
+    <script src="floating-widgets-btn.js"></script>
+    <script src="accessibility-pack.js"></script>
+    
+    <script>
+        function testAccessibilityPanel() {
+            console.log('🧪 بدء اختبار لوحة إمكانية الوصول...');
+            
+            // البحث عن زر إمكانية الوصول وتفعيله
+            const accessibilityBtn = document.querySelector('[data-action="accessibility"]');
+            if (accessibilityBtn) {
+                accessibilityBtn.click();
+                console.log('✅ تم تفعيل لوحة إمكانية الوصول');
+            } else {
+                console.error('❌ لم يتم العثور على زر إمكانية الوصول');
+            }
+        }
+        
+        function testCursor() {
+            console.log('🧪 اختبار المؤشر الكبير...');
+            
+            // تفعيل المؤشر الكبير مباشرة
+            if (window.largeImageCursor) {
+                window.largeImageCursor.enable();
+                console.log('✅ تم تفعيل المؤشر الكبير');
+            } else {
+                console.error('❌ لم يتم العثور على كائن المؤشر الكبير');
+            }
+        }
+        
+        function testTools() {
+            console.log('🧪 اختبار الأدوات...');
+            
+            // اختبار الأدوات المختلفة
+            const tools = ['contrast', 'hide-images', 'cursor', 'letter-spacing', 'word-spacing', 'line-spacing', 'highlight-links'];
+            
+            tools.forEach((tool, index) => {
+                setTimeout(() => {
+                    const toolElement = document.querySelector(`[data-tool="${tool}"]`);
+                    if (toolElement) {
+                        toolElement.click();
+                        console.log(`✅ تم اختبار أداة: ${tool}`);
+                    }
+                }, index * 500);
+            });
+        }
+        
+        // إضافة event listeners للاختبار
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 تم تحميل صفحة الاختبار بنجاح');
+            console.log('📝 استخدم الأزرار أعلاه لاختبار الوظائف المختلفة');
+        });
+    </script>
+</body>
+</html>
