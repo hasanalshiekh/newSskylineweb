@@ -698,7 +698,9 @@ function handleWidgetAction(action) {
             panel.innerHTML = `
                 <div class="accessibility-panel-overlay modern-compact">
                     <div class="accessibility-panel-content">
-                        <div class="accessibility-panel-header compact-header">
+                        <div class="C:\Users\hasan\skylineproject\newSkyLineWeb>git commit -m "hasanaccess"
+On branch main
+nothing to commit, working tree clean compact-header">
                             <div class="header-brand">
                                 <div class="brand-icon">
                                     <i class="fas fa-universal-access"></i>
