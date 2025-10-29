@@ -698,18 +698,16 @@ function handleWidgetAction(action) {
             panel.innerHTML = `
                 <div class="accessibility-panel-overlay modern-compact">
                     <div class="accessibility-panel-content">
-                        <div class="C:\Users\hasan\skylineproject\newSkyLineWeb>git commit -m "hasanaccess"
-On branch main
-nothing to commit, working tree clean compact-header">
-                            <div class="header-brand">
-                                <div class="brand-icon">
+                        <div class="compact-header" style="background: linear-gradient(135deg, #E00A2C, #C44048); color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 20px;">
+                            <div class="header-brand" style="display: flex; align-items: center;">
+                                <div class="brand-icon" style="margin-right: 10px;">
                                     <i class="fas fa-universal-access"></i>
                                 </div>
                                 <div class="brand-text">
-                                    <h3>Accessibility</h3>
+                                    <h3 style="margin: 0; font-size: 18px;">Accessibility</h3>
                                 </div>
                             </div>
-                            <button class="accessibility-panel-close compact-close">
+                            <button class="accessibility-panel-close compact-close" style="background: none; border: none; color: white; font-size: 18px; padding: 5px; cursor: pointer;">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
