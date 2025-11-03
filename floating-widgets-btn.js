@@ -1169,69 +1169,113 @@ function createFloatingWidgetsButton() {
         /* Mobile responsive */
         @media (max-width: 768px) {
             #floating-widgets-btn {
-                bottom: 20px !important;
-                right: 20px !important;
-                width: 55px !important;
-                height: 55px !important;
-            }
-
-            .floating-btn-content i {
-                font-size: 1.6rem !important;
-            }
-
-            .floating-btn-text {
-                font-size: 0.7rem !important;
-            }
-
-            .floating-widgets-menu {
-                bottom: 75px !important;
-                right: -10px !important;
-                min-width: 290px !important;
-                max-height: calc(100vh - 150px) !important;
-                padding: 1.5rem 1.2rem !important;
-            }
-
-            .widget-item {
-                width: 45px !important;
-                height: 45px !important;
-            }
-
-            .widget-item i {
-                font-size: 1.6rem !important;
-            }
-        }
-
-        /* Small screens */
-        @media (max-width: 480px) {
-            #floating-widgets-btn {
                 bottom: 15px !important;
                 right: 15px !important;
                 width: 50px !important;
                 height: 50px !important;
             }
 
+            .floating-btn-content i {
+                font-size: 1.4rem !important;
+            }
+
             .floating-btn-text {
                 font-size: 0.65rem !important;
+                display: none !important;
+            }
+
+            .floating-widgets-menu {
+                bottom: 70px !important;
+                right: 0 !important;
+                min-width: auto !important;
+                max-width: calc(100vw - 30px) !important;
+                max-height: calc(100vh - 100px) !important;
+                padding: 0.8rem !important;
+                gap: 0.6rem !important;
+            }
+
+            .widget-item {
+                width: 45px !important;
+                height: 45px !important;
+                margin-bottom: 0.6rem !important;
+            }
+
+            .widget-item i {
+                font-size: 1.5rem !important;
+            }
+
+            .widget-item:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        /* Small screens */
+        @media (max-width: 480px) {
+            #floating-widgets-btn {
+                bottom: 12px !important;
+                right: 12px !important;
+                width: 48px !important;
+                height: 48px !important;
+            }
+
+            .floating-btn-text {
+                display: none !important;
             }
 
             .floating-btn-content i {
-                font-size: 1.4rem !important;
-                margin-bottom: 2px !important;
+                font-size: 1.3rem !important;
+                margin-bottom: 0 !important;
             }
             
             .floating-widgets-menu {
-                min-width: 270px !important;
-                max-height: calc(100vh - 120px) !important;
-                padding: 1.3rem 1.1rem !important;
+                bottom: 68px !important;
+                right: 0 !important;
+                min-width: auto !important;
+                max-width: calc(100vw - 24px) !important;
+                max-height: calc(100vh - 90px) !important;
+                padding: 0.6rem !important;
+                gap: 0.5rem !important;
+            }
+            
+            .widget-item {
+                width: 42px !important;
+                height: 42px !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .widget-item i {
+                font-size: 1.3rem !important;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            #floating-widgets-btn {
+                bottom: 10px !important;
+                right: 10px !important;
+                width: 45px !important;
+                height: 45px !important;
+            }
+
+            .floating-btn-content i {
+                font-size: 1.2rem !important;
+            }
+            
+            .floating-widgets-menu {
+                bottom: 65px !important;
+                right: 0 !important;
+                padding: 0.5rem !important;
+                gap: 0.4rem !important;
             }
             
             .widget-item {
                 width: 40px !important;
                 height: 40px !important;
+                margin-bottom: 0.4rem !important;
             }
             
             .widget-item i {
-                font-size: 1.4rem !important;
+                font-size: 1.2rem !important;
             }
         }
 
@@ -2001,10 +2045,10 @@ button,
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* تصميم البانل الرئيسي */
+/* تصميم البانل الرئيسي - إزالة الضبابية */
 .accessibility-panel-overlay.modern-compact {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
+    background: transparent;
+    backdrop-filter: none;
 }
 
 .accessibility-panel-content {
@@ -2022,45 +2066,83 @@ button,
 /* تأثيرات متجاوبة */
 @media (max-width: 768px) {
     .tools-container {
-        padding: 0.8rem;
+        padding: 0.8rem 0.6rem;
         max-width: 100%;
     }
     
     .tool-row {
-        gap: 0.6rem;
-        margin-bottom: 0.6rem;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
     }
     
     .tools-container .accessibility-tool {
         padding: 0.7rem 0.5rem;
+        min-height: 75px;
     }
     
     .tools-container .tool-icon-compact {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
     }
     
     .tools-container .tool-label span {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
     
     .tools-container .tool-label small {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
     
     .accessibility-panel-content {
-        max-width: 95%;
+        max-width: 100%;
+        border-radius: 16px;
     }
 }
 
 @media (max-width: 480px) {
+    .tools-container {
+        padding: 0.6rem 0.5rem;
+    }
+    
+    .tools-container .accessibility-tool {
+        width: 48%;
+        margin-bottom: 0;
+        padding: 0.6rem 0.4rem;
+        min-height: 70px;
+    }
+    
+    .tool-row {
+        gap: 0.4rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .tools-container .tool-icon-compact {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .tools-container .tool-label span {
+        font-size: 0.65rem;
+    }
+    
+    .tools-container .tool-label small {
+        font-size: 0.55rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .tools-container {
+        padding: 0.5rem;
+    }
+    
     .tools-container .accessibility-tool {
         width: 100%;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
     }
     
     .tool-row {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.5rem;
     }
 }
 

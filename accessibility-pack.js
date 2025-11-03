@@ -25,8 +25,17 @@ accessibilityStyles.textContent = `
         transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         overflow: hidden;
         border: 1px solid rgba(60, 60, 60, 0.5);
-        backdrop-filter: blur(20px) saturate(110%);
-        -webkit-backdrop-filter: blur(20px) saturate(110%);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        pointer-events: none;
+    }
+    
+    /* جعل المحتوى داخل الـ overlay قابل للنقر */
+    .accessibility-panel-overlay .accessibility-panel-content,
+    .accessibility-panel-overlay .accessibility-panel-header,
+    .accessibility-panel-overlay .accessibility-panel-body,
+    .accessibility-panel-overlay * {
+        pointer-events: auto;
     }
 
     .accessibility-panel-overlay.active {
@@ -546,36 +555,46 @@ accessibilityStyles.textContent = `
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
         .accessibility-panel-overlay {
-            bottom: 10px;
+            bottom: 80px;
             right: -100%;
             width: calc(100vw - 20px);
-            height: 350px;
-            border-radius: 16px;
+            max-width: 420px;
+            height: calc(100vh - 100px);
+            max-height: 500px;
+            border-radius: 20px;
+            left: auto;
         }
         
         .accessibility-panel-overlay.active {
             right: 10px;
+            left: auto;
         }
         
-        .accessibility-panel-overlay.active::before {
+        /* إزالة الـ overlay الذي يغطي الشاشة بالكامل */
+        /* .accessibility-panel-overlay.active::before {
             content: '';
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: -1;
-            backdrop-filter: blur(5px);
-        }
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+        } */
         
         .accessibility-panel-content {
             width: 100%;
             max-height: 100%;
+            overflow-y: auto;
         }
 
         .accessibility-panel-header {
             padding: 1rem 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .accessibility-panel-header h3 {
@@ -583,7 +602,9 @@ accessibilityStyles.textContent = `
         }
 
         .tab-content {
-            padding: 1rem;
+            padding: 1rem 0.8rem;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
         }
 
         .accessibility-grid {
@@ -592,46 +613,159 @@ accessibilityStyles.textContent = `
         }
 
         .accessibility-tool {
-            padding: 0.8rem;
-            min-height: 75px;
+            padding: 0.8rem 0.6rem;
+            min-height: 80px;
+            font-size: 0.85rem;
         }
 
         .tool-icon {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
         }
 
         .tool-title {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
+            line-height: 1.3;
         }
 
         .tab-btn {
-            padding: 0.7rem 0.8rem;
-            font-size: 0.75rem;
+            padding: 0.7rem 0.6rem;
+            font-size: 0.7rem;
             gap: 0.3rem;
         }
         
         .accessibility-tabs {
+            gap: 0.4rem;
+            padding: 0.6rem;
+            position: sticky;
+            top: 70px;
+            z-index: 99;
+        }
+
+        .profile-item, .language-item {
+            padding: 0.7rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .profile-title, .language-title {
+            font-size: 0.8rem;
+        }
+
+        .profile-icon, .language-flag {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .accessibility-panel-overlay {
+            bottom: 70px;
+            width: calc(100vw - 16px);
+            height: calc(100vh - 90px);
+            max-height: 450px;
+            border-radius: 16px;
+        }
+        
+        .accessibility-panel-overlay.active {
+            right: 8px;
+        }
+
+        .accessibility-panel-header {
+            padding: 0.9rem 1rem;
+        }
+
+        .accessibility-panel-header h3 {
+            font-size: 0.95rem;
+        }
+
+        .accessibility-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .accessibility-tool {
+            padding: 0.7rem 0.5rem;
+            min-height: 70px;
+            font-size: 0.8rem;
+        }
+
+        .tool-icon {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .tool-title {
+            font-size: 0.65rem;
+            line-height: 1.2;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 0.5rem;
+            font-size: 0.65rem;
+            gap: 0.2rem;
+        }
+        
+        .accessibility-tabs {
             gap: 0.3rem;
-            padding: 0.3rem;
+            padding: 0.5rem;
+        }
+
+        .tab-content {
+            padding: 0.8rem 0.6rem;
+            max-height: calc(100vh - 180px);
         }
 
         .profile-item, .language-item {
             padding: 0.6rem 0.8rem;
+            font-size: 0.8rem;
         }
 
         .profile-title, .language-title {
             font-size: 0.75rem;
         }
+
+        .profile-icon, .language-flag {
+            font-size: 1.2rem;
+        }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 360px) {
+        .accessibility-panel-overlay {
+            bottom: 65px;
+            width: calc(100vw - 12px);
+            height: calc(100vh - 85px);
+            max-height: 400px;
+            border-radius: 14px;
+        }
+        
+        .accessibility-panel-overlay.active {
+            right: 6px;
+        }
+
         .accessibility-grid {
             grid-template-columns: 1fr;
             gap: 0.5rem;
         }
         
         .accessibility-tool {
+            padding: 0.6rem;
             min-height: 65px;
+        }
+
+        .tool-icon {
+            font-size: 1rem;
+        }
+
+        .tool-title {
+            font-size: 0.6rem;
+        }
+
+        .tab-btn {
+            padding: 0.5rem;
+            font-size: 0.6rem;
+        }
+
+        .tab-content {
+            padding: 0.6rem 0.5rem;
         }
     }
 `;
@@ -804,9 +938,10 @@ function initializeAccessibilityPanel(panel) {
     // Event listeners
     closeBtn.addEventListener('click', closeAccessibilityPanel);
 
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeAccessibilityPanel();
-    });
+    // إزالة event listener للـ overlay حتى لا يمنع النقر على الشاشة
+    // overlay.addEventListener('click', (e) => {
+    //     if (e.target === overlay) closeAccessibilityPanel();
+    // });
 
     // Close on escape key
     document.addEventListener('keydown', (e) => {
