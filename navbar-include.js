@@ -1569,12 +1569,10 @@ function getNavbarHTML() {
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="products&solutions.html" data-translate="nav-products">Our Products & Solutions</a></li>
-                            <li><a href="products&solutions.html#software-solutions" data-translate="nav-products">Software Solutions</a></li>
-                            <li><a href="saas-programs.html" data-translate="nav-saas">SaaS Programs</a></li>
-                            <li><a href="pricing.html" data-translate="nav-pricing">Pricing</a></li>
+                            
                             <li><a href="products&solutions.html#demo" data-translate="nav-products">Book Your Demo</a></li>
-                            <li><a href="products&solutions.html#videos" data-translate="nav-products">Product Videos</a></li>
-                            <li><a href="download-center.html" data-translate="nav-download">Download Center</a></li>
+                            
+                            
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -1590,9 +1588,7 @@ function getNavbarHTML() {
                     </li>
                     <li><a href="contact-us.html" data-translate="nav-contact">Contact Us</a></li>
                     <li class="portal-access">
-                        <a href="client-portal-access.html" class="portal-btn" title="Client Portal Access">
-                            <i class="fas fa-user-shield"></i>
-                        </a>
+                       
                     </li>
                     <li class="language-switcher">
                         <button class="language-btn" id="language-switch-btn">

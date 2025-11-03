@@ -13,7 +13,6 @@
     <script src="translation-system.js" defer></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +25,8 @@
         }
 
         /* Prevent horizontal scroll globally */
-        body, html {
+        body,
+        html {
             overflow-x: hidden !important;
             max-width: 100vw !important;
         }
@@ -43,7 +43,12 @@
         }
 
         /* Heading Colors */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: #FDF5E6 !important;
         }
 
@@ -53,24 +58,34 @@
         }
 
         /* Card Colors - Dark Theme */
-        .service-card, .industry-card, .contact-card, .highlight-card {
+        .service-card,
+        .industry-card,
+        .contact-card,
+        .highlight-card {
             background: #131313 !important;
             border: 1px solid rgba(224, 10, 44, 0.2) !important;
             color: #ffffff !important;
         }
-        
-        .service-card h3, .industry-card h3, .contact-card h3, .highlight-card h4 {
+
+        .service-card h3,
+        .industry-card h3,
+        .contact-card h3,
+        .highlight-card h4 {
             color: #ffffff !important;
         }
-        
-        .service-card p, .industry-card p, .contact-card p, .highlight-card p {
+
+        .service-card p,
+        .industry-card p,
+        .contact-card p,
+        .highlight-card p {
             color: #ffffff !important;
         }
-        
-        .service-card .feature-item, .industry-card .feature-item {
+
+        .service-card .feature-item,
+        .industry-card .feature-item {
             color: #E00A2C !important;
         }
-        
+
         .contact-card p {
             color: #E00A2C !important;
         }
@@ -251,6 +266,17 @@
             text-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
         }
 
+        .about-text .section-title {
+            text-align: left;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .about-text .section-title::after {
+            left: 0;
+            transform: translateX(0);
+        }
+
         .about-text p {
             color: #4b5563;
             line-height: 1.8;
@@ -396,7 +422,7 @@
             background: #131313;
             padding: 1.5rem 1rem;
             border-radius: 16px;
-            box-shadow: 
+            box-shadow:
                 0 8px 32px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -419,7 +445,7 @@
 
         .stat-item:hover {
             transform: translateY(-10px) rotateY(5deg) rotateX(5deg) scale(1.05);
-            box-shadow: 
+            box-shadow:
                 0 25px 50px rgba(0, 0, 0, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
                 0 0 0 1px rgba(255, 255, 255, 0.3);
@@ -556,7 +582,7 @@
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -577,7 +603,7 @@
 
         .leader-card:hover {
             transform: translateY(-15px) rotateY(8deg) rotateX(5deg) scale(1.05);
-            box-shadow: 
+            box-shadow:
                 0 30px 60px rgba(0, 0, 0, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
                 0 0 0 1px rgba(255, 255, 255, 0.3);
@@ -612,7 +638,7 @@
             margin: 0 auto 1rem;
             font-size: 1.8rem;
             color: white;
-            box-shadow: 
+            box-shadow:
                 0 8px 20px rgba(220, 38, 38, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
@@ -620,7 +646,7 @@
 
         .leader-card:hover .leader-avatar {
             transform: scale(1.1) rotateY(15deg);
-            box-shadow: 
+            box-shadow:
                 0 12px 30px rgba(220, 38, 38, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
@@ -692,7 +718,7 @@
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
@@ -727,7 +753,7 @@
             margin: 0 auto 1rem;
             font-size: 1.6rem;
             color: white;
-            box-shadow: 
+            box-shadow:
                 0 6px 16px rgba(220, 38, 38, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
@@ -735,7 +761,7 @@
 
         .partner-card:hover .partner-logo {
             transform: scale(1.1) rotateZ(-5deg);
-            box-shadow: 
+            box-shadow:
                 0 10px 25px rgba(220, 38, 38, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
@@ -806,21 +832,37 @@
         }
 
         .alliance-category h3 {
-            color: #ffffff;
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-weight: 600;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDF5E6 30%, #C44048 70%, #E00A2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
 
         .alliance-category h3 i {
-            color: #dc2626;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E00A2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .alliance-category h3 span {
+            background: linear-gradient(135deg, #942525 0%, #d9d0be 30%, #C44048 70%, #E00A2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
 
         .alliance-category p {
-            color: #ffffff;
+            color: #777 !important;
             line-height: 1.6;
             margin: 0;
         }
@@ -851,7 +893,7 @@
             padding: 1.5rem 1rem;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
@@ -1060,7 +1102,7 @@
             background: #131313;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1106,7 +1148,7 @@
             justify-content: center;
             color: white;
             font-size: 1.2rem;
-            box-shadow: 
+            box-shadow:
                 0 6px 16px rgba(220, 38, 38, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
@@ -1114,7 +1156,7 @@
 
         .solution-card:hover .solution-image {
             transform: scale(1.1) rotateZ(5deg);
-            box-shadow: 
+            box-shadow:
                 0 8px 20px rgba(220, 38, 38, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
@@ -1835,26 +1877,26 @@
                 max-width: 100%;
                 overflow-x: hidden;
             }
-            
+
             body {
                 padding-top: 0;
                 overflow-x: hidden;
                 max-width: 100vw;
             }
-            
+
             .hero {
                 margin-top: 0;
                 padding: 8rem 0 2rem;
                 overflow-x: hidden;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
                 line-height: 1.2;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
-            
+
             .hero p {
                 font-size: 1rem;
                 word-wrap: break-word;
@@ -2118,10 +2160,21 @@
         }
 
         /* Staggered Animation Delays */
-        .animate-delay-1 { transition-delay: 0.1s; }
-        .animate-delay-2 { transition-delay: 0.2s; }
-        .animate-delay-3 { transition-delay: 0.3s; }
-        .animate-delay-4 { transition-delay: 0.4s; }
+        .animate-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .animate-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .animate-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .animate-delay-4 {
+            transition-delay: 0.4s;
+        }
 
         /* Floating Elements */
         .floating-elements {
@@ -2139,7 +2192,7 @@
             background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(239, 68, 68, 0.15), rgba(59, 130, 246, 0.1));
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
-            box-shadow: 
+            box-shadow:
                 0 0 20px rgba(220, 38, 38, 0.2),
                 inset 0 0 20px rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -2178,10 +2231,13 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) rotate(0deg);
                 opacity: 0.7;
             }
+
             50% {
                 transform: translateY(-20px) rotate(180deg);
                 opacity: 1;
@@ -2246,11 +2302,12 @@
 
         @keyframes particleFloat {
             0% {
-            opacity: 1;
+                opacity: 1;
                 transform: translateY(0) scale(1);
             }
+
             100% {
-            opacity: 0;
+                opacity: 0;
                 transform: translateY(-50px) scale(0);
             }
         }
@@ -2427,18 +2484,22 @@
                 transform: translateY(0px) rotate(0deg) scale(1);
                 opacity: 0.1;
             }
+
             25% {
                 transform: translateY(-20px) rotate(90deg) scale(1.1);
                 opacity: 0.15;
             }
+
             50% {
                 transform: translateY(-40px) rotate(180deg) scale(0.9);
                 opacity: 0.08;
             }
+
             75% {
                 transform: translateY(-20px) rotate(270deg) scale(1.05);
                 opacity: 0.12;
             }
+
             100% {
                 transform: translateY(0px) rotate(360deg) scale(1);
                 opacity: 0.1;
@@ -2450,7 +2511,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         /* Ensure all content sections are below navbar */
         .about-section,
         .vision-mission-section,
@@ -2463,7 +2524,6 @@
             position: relative;
             z-index: 1;
         }
-
     </style>
 </head>
 
@@ -2502,9 +2562,10 @@
             <div class="floating-element"></div>
             <div class="floating-element"></div>
         </div>
-        
+
         <!-- Particle Animation -->
-        <div id="particles-style-01" class="position-absolute h-100 top-0 left-0 w-100" data-particle="true" data-particle-options="{ &quot;particles&quot;: { &quot;number&quot;: { &quot;value&quot;: 80, &quot;density&quot;: { &quot;enable&quot;: true, &quot;value_area&quot;: 800 } }, &quot;color&quot;: { &quot;value&quot;: &quot;#DC2626&quot; }, &quot;shape&quot;: { &quot;type&quot;: &quot;circle&quot;, &quot;stroke&quot;: { &quot;width&quot;: 0, &quot;color&quot;: &quot;#DC2626&quot; }, &quot;polygon&quot;: { &quot;nb_sides&quot;: 5 }, &quot;image&quot;: { &quot;src&quot;: &quot;img/github.svg&quot;, &quot;width&quot;: 100, &quot;height&quot;: 100 } }, &quot;opacity&quot;: { &quot;value&quot;: 0.6, &quot;random&quot;: false, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 1, &quot;opacity_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;size&quot;: { &quot;value&quot;: 4, &quot;random&quot;: true, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 40, &quot;size_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;line_linked&quot;: { &quot;enable&quot;: true, &quot;distance&quot;: 150, &quot;color&quot;: &quot;#DC2626&quot;, &quot;opacity&quot;: 0.8, &quot;width&quot;: 1 }, &quot;move&quot;: { &quot;enable&quot;: true, &quot;speed&quot;: 6, &quot;direction&quot;: &quot;none&quot;, &quot;random&quot;: false, &quot;straight&quot;: false, &quot;out_mode&quot;: &quot;out&quot;, &quot;bounce&quot;: false, &quot;attract&quot;: { &quot;enable&quot;: false, &quot;rotateX&quot;: 600, &quot;rotateY&quot;: 1200 } } }, &quot;interactivity&quot;: { &quot;detect_on&quot;: &quot;canvas&quot;, &quot;events&quot;: { &quot;onhover&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;repulse&quot; }, &quot;onclick&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;push&quot; }, &quot;resize&quot;: true }, &quot;modes&quot;: { &quot;grab&quot;: { &quot;distance&quot;: 400, &quot;line_linked&quot;: { &quot;opacity&quot;: 1 } }, &quot;bubble&quot;: { &quot;distance&quot;: 400, &quot;size&quot;: 40, &quot;duration&quot;: 2, &quot;opacity&quot;: 8, &quot;speed&quot;: 3 }, &quot;repulse&quot;: { &quot;distance&quot;: 200, &quot;duration&quot;: 0.4 }, &quot;push&quot;: { &quot;particles_nb&quot;: 4 }, &quot;remove&quot;: { &quot;particles_nb&quot;: 2 } } }, &quot;retina_detect&quot;: true}">
+        <div id="particles-style-01" class="position-absolute h-100 top-0 left-0 w-100" data-particle="true"
+            data-particle-options="{ &quot;particles&quot;: { &quot;number&quot;: { &quot;value&quot;: 80, &quot;density&quot;: { &quot;enable&quot;: true, &quot;value_area&quot;: 800 } }, &quot;color&quot;: { &quot;value&quot;: &quot;#DC2626&quot; }, &quot;shape&quot;: { &quot;type&quot;: &quot;circle&quot;, &quot;stroke&quot;: { &quot;width&quot;: 0, &quot;color&quot;: &quot;#DC2626&quot; }, &quot;polygon&quot;: { &quot;nb_sides&quot;: 5 }, &quot;image&quot;: { &quot;src&quot;: &quot;img/github.svg&quot;, &quot;width&quot;: 100, &quot;height&quot;: 100 } }, &quot;opacity&quot;: { &quot;value&quot;: 0.6, &quot;random&quot;: false, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 1, &quot;opacity_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;size&quot;: { &quot;value&quot;: 4, &quot;random&quot;: true, &quot;anim&quot;: { &quot;enable&quot;: false, &quot;speed&quot;: 40, &quot;size_min&quot;: 0.1, &quot;sync&quot;: false } }, &quot;line_linked&quot;: { &quot;enable&quot;: true, &quot;distance&quot;: 150, &quot;color&quot;: &quot;#DC2626&quot;, &quot;opacity&quot;: 0.8, &quot;width&quot;: 1 }, &quot;move&quot;: { &quot;enable&quot;: true, &quot;speed&quot;: 6, &quot;direction&quot;: &quot;none&quot;, &quot;random&quot;: false, &quot;straight&quot;: false, &quot;out_mode&quot;: &quot;out&quot;, &quot;bounce&quot;: false, &quot;attract&quot;: { &quot;enable&quot;: false, &quot;rotateX&quot;: 600, &quot;rotateY&quot;: 1200 } } }, &quot;interactivity&quot;: { &quot;detect_on&quot;: &quot;canvas&quot;, &quot;events&quot;: { &quot;onhover&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;repulse&quot; }, &quot;onclick&quot;: { &quot;enable&quot;: true, &quot;mode&quot;: &quot;push&quot; }, &quot;resize&quot;: true }, &quot;modes&quot;: { &quot;grab&quot;: { &quot;distance&quot;: 400, &quot;line_linked&quot;: { &quot;opacity&quot;: 1 } }, &quot;bubble&quot;: { &quot;distance&quot;: 400, &quot;size&quot;: 40, &quot;duration&quot;: 2, &quot;opacity&quot;: 8, &quot;speed&quot;: 3 }, &quot;repulse&quot;: { &quot;distance&quot;: 200, &quot;duration&quot;: 0.4 }, &quot;push&quot;: { &quot;particles_nb&quot;: 4 }, &quot;remove&quot;: { &quot;particles_nb&quot;: 2 } } }, &quot;retina_detect&quot;: true}">
             <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
         </div>
         <!-- Programming Symbols Background -->
@@ -2532,51 +2593,53 @@
         </div>
         <div class="container">
             <h1 data-translate="about-hero-title">About SKYLINE</h1>
-            <p data-translate="about-hero-description">Discover our company profile, vision, mission, leadership, and strategic partnerships</p>
+            <p data-translate="about-hero-description">Empowering Innovation. Elevating Businesses</p>
         </div>
     </section>
 
     <!-- Company Profile Section -->
     <section id="company-profile" class="about-section">
         <div class="container">
-            <div class="section-header fade-in-up">
+            <!-- <div class="section-header fade-in-up">
                 <h2 class="section-title" data-translate="about-company-profile-title">Company Profile</h2>
                 <p class="section-subtitle" data-translate="about-company-profile-subtitle">A leading software innovation company transforming businesses across
                     the Middle East</p>
-            </div>
+            </div> -->
 
-            <div class="about-content">
-                <div class="about-text fade-in-left">
-                    <h2 data-translate="about-building-future-title">Building the Future of Software</h2>
-                    <p data-translate="about-founding-story">SKYLINE Innovation Software was founded in 2020, driven by a vision to transform how companies
-                        operate in the digital age. We started as a small team of passionate developers and entrepreneurs who believed that technology
-                        should be accessible, powerful, and transformative.
+            <div class="about-content ">
+                <div class="about-text fade-in-left ">
+                    <h2 data-translate="about-building-future-title " class="section-title">Building the Future of
+                        Software</h2>
+
+                    <p data-translate="about-founding-story">At Skyline Innovations Software, we believe the future
+                        isn’t just written in code — it’s built through vision, collaboration, and technology that
+                        empowers real change.
+                        We transform challenges into opportunities by crafting intelligent systems that connect people,
+                        processes, and data seamlessly.
+                        Our mission goes beyond development — we design digital experiences that inspire progress,
+                        redefine efficiency, and drive businesses toward a smarter, more sustainable tomorrow.
+                        Every line of code we write, every platform we deliver, and every partnership we build reflects
+                        our belief in one purpose:
+                        to build the future of software, today.
                     </p>
 
-                    <p data-translate="about-current-status">Today, we are proud to serve hundreds of companies across the Middle East and beyond, delivering
-                        advanced software solutions that drive growth, efficiency, and innovation. Our journey has been marked by continuous learning, adaptation,
-                        and unwavering commitment to excellence.</p>
-
-                    <p data-translate="about-company-belief">We believe that every company, regardless of size, deserves access to enterprise-level software solutions.
-                        That's why we built our platform to be scalable, user-friendly, and cost-effective,
-                        ensuring that innovation is accessible to everyone.</p>
 
                     <div class="company-stats">
                         <div class="stat-item scale-in animate-delay-1">
-                            <h3>500+</h3>
+                            <h3>30+</h3>
                             <p data-translate="about-stat-clients">Active Clients</p>
                         </div>
                         <div class="stat-item scale-in animate-delay-2">
-                            <h3>8+</h3>
-                            <p data-translate="about-stat-team">Team Members</p>
+                            <h3>10+</h3>
+                            <p data-translate="about-stat-team">Industries</p>
                         </div>
                         <div class="stat-item scale-in animate-delay-3">
-                            <h3>5+</h3>
-                            <p data-translate="about-stat-countries">Countries We Serve</p>
+                            <h3>4.9/5 </h3>
+                            <p data-translate="about-stat-countries">Average Rating</p>
                         </div>
                         <div class="stat-item scale-in animate-delay-4">
                             <h3>99%</h3>
-                            <p data-translate="about-stat-satisfaction">Customer Satisfaction</p>
+                            <p data-translate="about-stat-satisfaction">Client Retention Rate</p>
                         </div>
                     </div>
                 </div>
@@ -2598,9 +2661,9 @@
                         <i class="fas fa-eye"></i>
                     </div>
                     <h2 class="vision-title" data-translate="about-vision-title">Our Vision</h2>
-                    <p class="vision-description" data-translate="about-vision-description">To be the leading software innovation company in the Middle East,
-                        enabling businesses to achieve digital transformation and sustainable growth through
-                        advanced technological solutions.</p>
+                    <p class="vision-description" data-translate="about-vision-description">To become the Middle East’s
+                        leading provider of enterprise software and digital transformation solutions, building the
+                        future of software through innovation, excellence, and sustainable growth.</p>
                 </div>
 
                 <div class="mission-card">
@@ -2608,20 +2671,22 @@
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h2 class="mission-title" data-translate="about-mission-title">Our Mission</h2>
-                    <p class="mission-description" data-translate="about-mission-description">To deliver innovative, scalable, and user-friendly software solutions
-                        that enable businesses to streamline operations, enhance productivity, and drive digital transformation
-                        across all industries.</p>
+                    <p class="mission-description" data-translate="about-mission-description">To deliver powerful,
+                        scalable, and user-friendly software systems that simplify operations, enhance productivity, and
+                        enable smarter decision-making across industries.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Leadership Section -->
-    <section id="leadership" class="leadership-section">
+    <!-- <section id="leadership" class="leadership-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-translate="about-leadership-title">Leadership Team</h2>
-                <p class="section-subtitle" data-translate="about-leadership-subtitle">Meet the visionary leaders who drive SKYLINE's success and innovation</p>
+                <p class="section-subtitle" data-translate="about-leadership-subtitle">Meet the visionary leaders who
+                    drive SKYLINE's success and innovation</p>
             </div>
 
             <div class="leadership-grid">
@@ -2631,12 +2696,15 @@
                     </div>
                     <h3 class="leader-name">Ahmed Al-Rashid</h3>
                     <p class="leader-position" data-translate="about-leader-1-position">CEO & Founder</p>
-                    <p class="leader-bio" data-translate="about-leader-1-bio">A visionary leader with over 15 years of experience in software development and
+                    <p class="leader-bio" data-translate="about-leader-1-bio">A visionary leader with over 15 years of
+                        experience in software development and
                         business strategy. Passionate about empowering companies through technology and digital
                         transformation.</p>
                     <div class="leader-expertise">
-                        <span class="expertise-tag" data-translate="about-leader-1-expertise-1">Strategic Leadership</span>
-                        <span class="expertise-tag" data-translate="about-leader-1-expertise-2">Business Development</span>
+                        <span class="expertise-tag" data-translate="about-leader-1-expertise-1">Strategic
+                            Leadership</span>
+                        <span class="expertise-tag" data-translate="about-leader-1-expertise-2">Business
+                            Development</span>
                         <span class="expertise-tag" data-translate="about-leader-1-expertise-3">Innovation</span>
                     </div>
                 </div>
@@ -2647,12 +2715,15 @@
                     </div>
                     <h3 class="leader-name">Sara Al-Zahra</h3>
                     <p class="leader-position" data-translate="about-leader-2-position">Chief Technology Officer</p>
-                    <p class="leader-bio" data-translate="about-leader-2-bio">A technical expert specializing in cloud engineering and AI solutions. She leads
+                    <p class="leader-bio" data-translate="about-leader-2-bio">A technical expert specializing in cloud
+                        engineering and AI solutions. She leads
                         our development team in creating advanced software products and innovative solutions.</p>
                     <div class="leader-expertise">
                         <span class="expertise-tag" data-translate="about-leader-2-expertise-1">Cloud Engineering</span>
-                        <span class="expertise-tag" data-translate="about-leader-2-expertise-2">AI & Machine Learning</span>
-                        <span class="expertise-tag" data-translate="about-leader-2-expertise-3">Software Engineering</span>
+                        <span class="expertise-tag" data-translate="about-leader-2-expertise-2">AI & Machine
+                            Learning</span>
+                        <span class="expertise-tag" data-translate="about-leader-2-expertise-3">Software
+                            Engineering</span>
                     </div>
                 </div>
 
@@ -2662,7 +2733,8 @@
                     </div>
                     <h3 class="leader-name">Omar Al-Hassan</h3>
                     <p class="leader-position" data-translate="about-leader-3-position">Product Manager</p>
-                    <p class="leader-bio" data-translate="about-leader-3-bio">A product strategist focused on user experience and market needs. He ensures that
+                    <p class="leader-bio" data-translate="about-leader-3-bio">A product strategist focused on user
+                        experience and market needs. He ensures that
                         our solutions effectively solve real business problems and deliver exceptional value.</p>
                     <div class="leader-expertise">
                         <span class="expertise-tag" data-translate="about-leader-3-expertise-1">Product Strategy</span>
@@ -2677,17 +2749,22 @@
                     </div>
                     <h3 class="leader-name">Fatima Al-Mansouri</h3>
                     <p class="leader-position" data-translate="about-leader-4-position">Operations Manager</p>
-                    <p class="leader-bio" data-translate="about-leader-4-bio">An operations expert with extensive experience in business process optimization
-                        and customer relationship management. She ensures smooth operations and customer satisfaction.</p>
+                    <p class="leader-bio" data-translate="about-leader-4-bio">An operations expert with extensive
+                        experience in business process optimization
+                        and customer relationship management. She ensures smooth operations and customer satisfaction.
+                    </p>
                     <div class="leader-expertise">
-                        <span class="expertise-tag" data-translate="about-leader-4-expertise-1">Operations Management</span>
-                        <span class="expertise-tag" data-translate="about-leader-4-expertise-2">Customer Relations</span>
-                        <span class="expertise-tag" data-translate="about-leader-4-expertise-3">Process Optimization</span>
+                        <span class="expertise-tag" data-translate="about-leader-4-expertise-1">Operations
+                            Management</span>
+                        <span class="expertise-tag" data-translate="about-leader-4-expertise-2">Customer
+                            Relations</span>
+                        <span class="expertise-tag" data-translate="about-leader-4-expertise-3">Process
+                            Optimization</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Featured Solutions Section -->
     <!-- <section class="featured-solutions">
@@ -2779,7 +2856,8 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-translate="about-values-title">Our Values</h2>
-                <p class="section-subtitle" data-translate="about-values-subtitle">The principles that guide everything we do</p>
+                <p class="section-subtitle" data-translate="about-values-subtitle">The principles that guide everything
+                    we do</p>
             </div>
 
             <div class="values-grid">
@@ -2788,8 +2866,9 @@
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3 class="value-title" data-translate="about-value-1-title">Innovation</h3>
-                    <p class="value-description" data-translate="about-value-1-description">We continuously push boundaries and explore new technologies to deliver
-                        advanced solutions that keep our clients ahead.</p>
+                    <p class="value-description" data-translate="about-value-1-description">Constantly evolving through
+                        creative technology.
+                    </p>
                 </div>
 
                 <div class="value-card">
@@ -2797,8 +2876,9 @@
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="value-title" data-translate="about-value-2-title">Trust</h3>
-                    <p class="value-description" data-translate="about-value-2-description">Building long-term relationships based on transparency, reliability,
-                        and keeping our promises is the essence of our business.</p>
+                    <p class="value-description" data-translate="about-value-2-description">Building strong, long-term
+                        partnerships based on integrity.
+                    </p>
                 </div>
 
                 <div class="value-card">
@@ -2806,8 +2886,9 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 class="value-title" data-translate="about-value-3-title">Collaboration</h3>
-                    <p class="value-description" data-translate="about-value-3-description">We believe in the power of teamwork, both within our organization and
-                        with our clients, to achieve exceptional results.</p>
+                    <p class="value-description" data-translate="about-value-3-description">Setting new standards of
+                        quality in every project.
+                    </p>
                 </div>
 
                 <div class="value-card">
@@ -2815,19 +2896,21 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3 class="value-title" data-translate="about-value-4-title">Excellence</h3>
-                    <p class="value-description" data-translate="about-value-4-description">We strive for excellence in every aspect of our work, from code quality
-                        to customer service and user experience.</p>
+                    <p class="value-description" data-translate="about-value-4-description">Dedicated to achieving our
+                        clients’ success.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" class="partners-section">
+    <!-- <section id="partners" class="partners-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-translate="about-partners-title">Strategic Partners</h2>
-                <p class="section-subtitle" data-translate="about-partners-subtitle">Collaborating with industry leaders to deliver exceptional solutions</p>
+                <p class="section-subtitle" data-translate="about-partners-subtitle">Collaborating with industry leaders
+                    to deliver exceptional solutions</p>
             </div>
 
             <div class="partners-grid">
@@ -2836,7 +2919,8 @@
                         <i class="fab fa-microsoft"></i>
                     </div>
                     <h3 class="partner-name">Microsoft</h3>
-                    <p class="partner-description" data-translate="about-partner-1-description">Official Microsoft partner providing Azure cloud solutions and
+                    <p class="partner-description" data-translate="about-partner-1-description">Official Microsoft
+                        partner providing Azure cloud solutions and
                         enterprise software integration services.</p>
                 </div>
 
@@ -2845,7 +2929,8 @@
                         <i class="fab fa-aws"></i>
                     </div>
                     <h3 class="partner-name">Amazon Web Services</h3>
-                    <p class="partner-description" data-translate="about-partner-2-description">Advanced AWS consulting partner specializing in cloud migration,
+                    <p class="partner-description" data-translate="about-partner-2-description">Advanced AWS consulting
+                        partner specializing in cloud migration,
                         architecture, and optimization services.</p>
                 </div>
 
@@ -2854,7 +2939,8 @@
                         <i class="fab fa-google"></i>
                     </div>
                     <h3 class="partner-name">Google Cloud</h3>
-                    <p class="partner-description" data-translate="about-partner-3-description">Google Cloud partner providing AI/ML solutions, data analytics, and
+                    <p class="partner-description" data-translate="about-partner-3-description">Google Cloud partner
+                        providing AI/ML solutions, data analytics, and
                         modern application development.</p>
                 </div>
 
@@ -2863,46 +2949,68 @@
                         <i class="fas fa-database"></i>
                     </div>
                     <h3 class="partner-name">Oracle</h3>
-                    <p class="partner-description" data-translate="about-partner-4-description">Oracle partner providing enterprise database solutions, ERP systems, and
+                    <p class="partner-description" data-translate="about-partner-4-description">Oracle partner providing
+                        enterprise database solutions, ERP systems, and
                         business intelligence platforms.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Alliances Section -->
     <section id="alliances" class="alliances-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-translate="about-alliances-title">Strategic Alliances</h2>
-                <p class="section-subtitle" data-translate="about-alliances-subtitle">Building strong partnerships to expand our reach and capabilities</p>
+                <p class="section-subtitle" data-translate="about-alliances-subtitle">We collaborate with global and
+                    regional technology leaders to deliver comprehensive digital ecosystems that empower businesses to
+                    reach new levels of efficiency and performance.
+                </p>
             </div>
 
             <div class="alliances-content">
                 <div class="alliance-text">
-                    <h2 data-translate="about-alliances-ecosystem-title">Expanding Our Ecosystem</h2>
-                    <p data-translate="about-alliances-ecosystem-description">SKYLINE has established strategic alliances with leading technology companies, industry associations,
-                        and academic institutions to enhance our service offerings and expand our market reach.</p>
+                    <h2 data-translate="about-alliances-ecosystem-title">Our key alliances include:
+                    </h2>
+                    <p data-translate="about-alliances-ecosystem-description">At Skyline, collaboration drives progress.
+                        We continuously expand our ecosystem through partnerships with industry pioneers, technology
+                        innovators, and digital leaders to enhance our service capabilities and build smarter,
+                        interconnected solutions.
+                        Our vision is to create a network of technology, innovation, and collaboration that accelerates
+                        business growth and sets new benchmarks in digital excellence.
+                    </p>
 
                     <div class="alliance-categories">
                         <div class="alliance-category">
-                            <h3><i class="fas fa-university"></i> <span data-translate="about-alliance-1-title">Academic Partnerships</span></h3>
-                            <p data-translate="about-alliance-1-description">Collaborating with leading universities and research institutions to drive innovation and
-                                develop advanced solutions.</p>
+                            <h3><i class=""></i> <span data-translate="about-alliance-1-title">Smart
+                                    Clouds Software
+                                </span></h3>
+
                         </div>
 
                         <div class="alliance-category">
-                            <h3><i class="fas fa-industry"></i> <span data-translate="about-alliance-2-title">Industry Associations</span></h3>
-                            <p data-translate="about-alliance-2-description">Active members in major industry associations to stay ahead of technological trends
-                                and best practices.</p>
+                            <h3><i class=""></i> <span data-translate="about-alliance-2-title">Fikra Zone
+                                </span></h3>
+                            
                         </div>
 
                         <div class="alliance-category">
-                            <h3><i class="fas fa-globe"></i> <span data-translate="about-alliance-3-title">Global Networks</span></h3>
-                            <p data-translate="about-alliance-3-description">Part of international technology networks that enable us to serve clients across multiple
-                                regions and markets.</p>
+                            <h3><i class=""></i> <span data-translate="about-alliance-3-title">Learn</span></h3>
+                          
+                        </div>
+                        <div class="alliance-category">
+                            <h3><i class=""></i> <span data-translate="about-alliance-3-title">BitByte</span></h3>
+                          
+                        </div>
+                        <div class="alliance-category">
+                            <h3><i class=""></i> <span data-translate="about-alliance-3-title">JCS </span></h3>
+                          
                         </div>
                     </div>
+
+                    <p data-translate="about-alliances-ecosystem-description">These collaborations strengthen Skyline’s ability to deliver integrated, future-ready, and high-impact digital transformation projects across diverse industries.
+
+                    </p>
                 </div>
 
                 <div class="alliance-image">
@@ -2918,16 +3026,17 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-translate="about-clients-title">Our Clients</h2>
-                <p class="section-subtitle" data-translate="about-clients-subtitle">Trusted by leading organizations across various industries</p>
+                <p class="section-subtitle" data-translate="about-clients-subtitle">Trusted by leading organizations
+                    across various industries</p>
             </div>
 
             <div class="clients-stats">
                 <div class="client-stat">
-                    <h3>500+</h3>
+                    <h3>30+</h3>
                     <p data-translate="about-client-stat-1">Active Clients</p>
                 </div>
                 <div class="client-stat">
-                    <h3>15+</h3>
+                    <h3>10+</h3>
                     <p data-translate="about-client-stat-2">Industries We Serve</p>
                 </div>
                 <div class="client-stat">
@@ -2942,7 +3051,8 @@
 
             <div class="clients-grid">
                 <div class="client-category">
-                    <h3><i class="fas fa-building"></i> <span data-translate="about-client-category-1">Enterprise Clients</span></h3>
+                    <h3><i class="fas fa-building"></i> <span data-translate="about-client-category-1">Enterprise
+                            Clients</span></h3>
                     <div class="client-logos">
                         <div class="client-logo">Al-Rajhi Bank</div>
                         <div class="client-logo">Saudi Telecom</div>
@@ -2952,7 +3062,8 @@
                 </div>
 
                 <div class="client-category">
-                    <h3><i class="fas fa-store"></i> <span data-translate="about-client-category-2">SME Clients</span></h3>
+                    <h3><i class="fas fa-store"></i> <span data-translate="about-client-category-2">SME Clients</span>
+                    </h3>
                     <div class="client-logos">
                         <div class="client-logo">Retail Chains</div>
                         <div class="client-logo">Manufacturing</div>
@@ -2962,7 +3073,8 @@
                 </div>
 
                 <div class="client-category">
-                    <h3><i class="fas fa-rocket"></i> <span data-translate="about-client-category-3">Startups</span></h3>
+                    <h3><i class="fas fa-rocket"></i> <span data-translate="about-client-category-3">Startups</span>
+                    </h3>
                     <div class="client-logos">
                         <div class="client-logo">FinTech</div>
                         <div class="client-logo">E-commerce</div>
@@ -2972,11 +3084,12 @@
                 </div>
             </div>
 
-            <div class="client-testimonials">
+            <!-- <div class="client-testimonials">
                 <h3 data-translate="about-testimonials-title">What Our Clients Say</h3>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <p data-translate="about-testimonial-1-text">"SKYLINE transformed our business operations with their innovative software solutions. The results exceeded our expectations."</p>
+                        <p data-translate="about-testimonial-1-text">"SKYLINE transformed our business operations with
+                            their innovative software solutions. The results exceeded our expectations."</p>
                         <div class="testimonial-author">
                             <strong>Ahmed Al-Sheikh</strong>
                             <span data-translate="about-testimonial-1-author">CEO, National Commercial Bank</span>
@@ -2984,7 +3097,8 @@
                     </div>
 
                     <div class="testimonial-card">
-                        <p data-translate="about-testimonial-2-text">"Their team's expertise and dedication helped us achieve our digital transformation goals faster than we expected."</p>
+                        <p data-translate="about-testimonial-2-text">"Their team's expertise and dedication helped us
+                            achieve our digital transformation goals faster than we expected."</p>
                         <div class="testimonial-author">
                             <strong>Sara Al-Mansouri</strong>
                             <span data-translate="about-testimonial-2-author">CTO, Saudi Telecom</span>
@@ -2992,14 +3106,15 @@
                     </div>
 
                     <div class="testimonial-card">
-                        <p data-translate="about-testimonial-3-text">"SKYLINE's solutions are user-friendly, scalable, and perfectly designed for our business needs."</p>
+                        <p data-translate="about-testimonial-3-text">"SKYLINE's solutions are user-friendly, scalable,
+                            and perfectly designed for our business needs."</p>
                         <div class="testimonial-author">
                             <strong>Omar Al-Hassan</strong>
                             <span data-translate="about-testimonial-3-author">Manager, SABIC</span>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -3009,13 +3124,13 @@
 
     <!-- Footer Include Script -->
     <script src="footer-include.js"></script>
-    
+
     <!-- Accessibility Pack -->
     <script src="accessibility-pack.js"></script>
-    
+
     <!-- Floating Action Button functionality is included in accessibility-pack.js -->
 
-    
+
     <script>
         // Load Footer
         document.addEventListener('DOMContentLoaded', function () {
@@ -3108,7 +3223,7 @@
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
                 const parallaxElements = document.querySelectorAll('.parallax');
-                
+
                 parallaxElements.forEach(element => {
                     const speed = element.dataset.speed || 0.5;
                     const yPos = -(scrolled * speed);
@@ -3153,11 +3268,11 @@
 
     <!-- Navbar Include Script -->
     <script src="navbar-include.js"></script>
-    
+
     <!-- Particle Animation Script -->
     <script>
         // Initialize particle animation when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Check if particles.js is loaded
             if (typeof particlesJS !== 'undefined') {
                 // Initialize particles with the configuration from data attribute
@@ -3172,16 +3287,16 @@
             }
         });
     </script>
-    
+
     <!-- Page Loader -->
     <script src="page-loader.js"></script>
-    
+
     <!-- Accessibility System -->
     <script src="accessibility-loader.js" defer></script>
-    
+
     <!-- Floating Widgets System -->
     <script src="floating-widgets-btn.js" defer></script>
-    
+
 </body>
 
 </html>

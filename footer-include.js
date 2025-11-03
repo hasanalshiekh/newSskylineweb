@@ -325,13 +325,7 @@ function getFooterHTML() {
                         <span class="logo-sky">SK</span><span class="logo-yline">YLINE</span>
                     </a>
 
-                    <div class="footer-nav">
-                        <a href="index.html" data-translate="footer-nav-home">Home</a>
-                        <a href="about.html" data-translate="footer-nav-about">About</a>
-                        <a href="products&solutions.html" data-translate="footer-nav-products">Products & Solutions</a>
-                        <a href="index.html#contact" data-translate="footer-nav-contact">Contact</a>
-                    </div>
-
+                 
                     <div class="footer-copyright" data-translate="footer-copyright">
                         © Copyright 2025 <span style="color: #C41E3A;">SKYLINE Innovation</span>
                     </div>
