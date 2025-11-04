@@ -1431,7 +1431,7 @@
                 padding: 10px;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
+                scroll-behavior: auto;
                 -webkit-overflow-scrolling: touch;
                 width: 100%;
                 box-sizing: border-box;
@@ -1446,24 +1446,30 @@
                 scrollbar-width: none;
             }
 
+            /* 1. إعداد الحاوية الأساسية للقلب */
             .mobile-carousel-item {
+                position: relative;
                 min-width: 85%;
-                height: 400px;
-                perspective: 1000px;
+                width: 300px; /* مثال - اضبطها حسب الحاجة */
+                height: 400px; /* مثال - اضبطها حسب الحاجة */
+                transform-style: preserve-3d;
+                transition: transform 0.6s ease;
+                cursor: pointer; /* لجعلها تفاعلية */
                 flex-shrink: 0;
                 scroll-snap-align: center;
-                position: relative;
-                cursor: pointer;
+                perspective: 1000px;
             }
 
+            /* 2. إعداد الأوجه الأمامية والخلفية */
             .mobile-card-face {
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
                 border-radius: 15px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: transform 0.6s ease;
                 overflow: hidden;
                 top: 0;
                 left: 0;
@@ -1473,6 +1479,8 @@
                 background: white;
                 display: flex;
                 flex-direction: column;
+                transform: rotateY(0deg);
+                -webkit-transform: rotateY(0deg);
             }
 
             .mobile-card-front img {
@@ -1505,13 +1513,20 @@
                 font-size: 1rem;
             }
 
+            /* 3. وضع الوجه الخلفي جاهزًا للظهور */
             .mobile-card-back {
                 background: linear-gradient(135deg, #000000, #020202);
                 color: white;
                 padding: 25px;
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
                 overflow-y: auto;
+                overflow-x: hidden;
                 border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
             }
 
             .mobile-card-back h3 {
@@ -1525,11 +1540,21 @@
                 margin-bottom: 20px;
                 line-height: 1.6;
                 text-align: center;
+                color: #fff;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
             }
 
             .mobile-card-back ul {
                 list-style-type: none;
                 padding: 0;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .mobile-card-back li {
@@ -1538,6 +1563,8 @@
                 position: relative;
                 padding-right: 20px;
                 margin-bottom: 5px;
+                color: #fff;
+                font-size: 0.9rem;
             }
 
             .mobile-card-back li:before {
@@ -1548,21 +1575,15 @@
                 font-weight: bold;
             }
 
-            .mobile-carousel-item.flipped .mobile-card-front {
-                transform: rotateY(180deg);
-            }
-
-            .mobile-carousel-item.flipped .mobile-card-back {
-                transform: rotateY(0);
-            }
-
             /* تحسين تأثير الـ flip */
             .mobile-carousel-item {
-                transition: transform 0.3s ease;
+                transition: transform 0.6s ease;
             }
 
+            /* 4. حالة التقليب (يجب إضافتها/إزالتها باستخدام JavaScript) */
             .mobile-carousel-item.flipped {
-                transform: scale(1.02);
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
                 z-index: 10;
                 box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
             }
@@ -1570,10 +1591,6 @@
             /* تحسينات إضافية للعرض */
             .mobile-carousel-item:active:not(.flipped) {
                 transform: scale(0.98);
-            }
-
-            .mobile-carousel-item.flipped:active {
-                transform: scale(1.0);
             }
 
             /* أسهم التنقل للموبايل */
@@ -2436,151 +2453,7 @@
         </div>
     </section>
 
-    <!-- Product Videos Section -->
-    <!-- <section id="videos" class="videos-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-translate="videos-section-title">Product Videos</h2>
-                <p class="section-subtitle" data-translate="videos-section-subtitle">Watch detailed demos and tutorials for our solutions</p>
-            </div>
-            
-            <div class="videos-grid">
-               
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" data-translate="video-erp-title">SKYLINE ERP - Complete Overview</h3>
-                        <p class="video-description" data-translate="video-erp-description">Learn how our ERP solution can streamline all your business operations from finance to inventory management.</p>
-                        <span class="video-duration" data-translate="video-erp-duration">15:30 minutes</span>
-                    </div>
-                </div>
-
-                
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" data-translate="video-crm-title">SKYLINE CRM - Sales & Customer Management</h3>
-                        <p class="video-description" data-translate="video-crm-description">Discover how our CRM platform can boost your sales performance and improve customer relationships.</p>
-                        <span class="video-duration" data-translate="video-crm-duration">12:45 minutes</span>
-                    </div>
-                </div>
-
-               
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" data-translate="video-ecommerce-title">SKYLINE Commerce - E-store Setup</h3>
-                        <p class="video-description" data-translate="video-ecommerce-description">Step-by-step guide to setting up your online store using our e-commerce platform.</p>
-                        <span class="video-duration" data-translate="video-ecommerce-duration">18:20 minutes</span>
-                    </div>
-                </div>
-
-              
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" data-translate="video-ai-title">SKYLINE AI Analytics - Data Insights</h3>
-                        <p class="video-description" data-translate="video-ai-description">Explore the power of AI-powered analytics and how it can transform your business decisions.</p>
-                        <span class="video-duration" data-translate="video-ai-duration">20:15 minutes</span>
-                    </div>
-                </div>
-
-                
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" data-translate="video-cloud-title">SKYLINE Cloud - Infrastructure Overview</h3>
-                        <p class="video-description" data-translate="video-cloud-description">Learn about our cloud hosting solutions and how they can scale with your business needs.</p>
-                        <span class="video-duration" data-translate="video-cloud-duration">14:30 minutes</span>
-                    </div>
-                </div>
-
-                
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" data-translate="video-mobile-title">SKYLINE Mobile - App Development</h3>
-                        <p class="video-description" data-translate="video-mobile-description">See how we create powerful mobile applications that work seamlessly across all devices.</p>
-                        <span class="video-duration" data-translate="video-mobile-duration">16:45 minutes</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-   
-    <!-- <section class="pricing-promo">
-        <div class="container">
-            <div class="pricing-promo-card" onclick="window.location.href='pricing.html'">
-                <div class="pricing-promo-badge">Special Offer</div>
-                
-                <div class="pricing-promo-header">
-                    <div class="pricing-promo-icon">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <h2 class="pricing-promo-title" data-translate="pricing-promo-title">Discover Our Pricing Plans</h2>
-                    <p class="pricing-promo-subtitle" data-translate="pricing-promo-subtitle">Choose the perfect plan for your business needs with flexible pricing options</p>
-                </div>
-                
-                <div class="pricing-promo-features">
-                    <div class="pricing-promo-feature">
-                        <i class="fas fa-rocket"></i>
-                        <span data-translate="pricing-promo-feature-1">Start from $99/month</span>
-                    </div>
-                    <div class="pricing-promo-feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <span data-translate="pricing-promo-feature-2">30-day free trial</span>
-                    </div>
-                    <div class="pricing-promo-feature">
-                        <i class="fas fa-users"></i>
-                        <span data-translate="pricing-promo-feature-3">Scalable for any team size</span>
-                    </div>
-                    <div class="pricing-promo-feature">
-                        <i class="fas fa-headset"></i>
-                        <span data-translate="pricing-promo-feature-4">24/7 premium support</span>
-                    </div>
-                    <div class="pricing-promo-feature">
-                        <i class="fas fa-cogs"></i>
-                        <span data-translate="pricing-promo-feature-5">All features included</span>
-                    </div>
-                    <div class="pricing-promo-feature">
-                        <i class="fas fa-chart-line"></i>
-                        <span data-translate="pricing-promo-feature-6">Advanced analytics</span>
-                    </div>
-                </div>
-                
-                <a href="pricing.html" class="pricing-promo-cta" data-translate="pricing-promo-cta">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>View All Pricing Plans</span>
-                </a>
-            </div>
-        </div>
-    </section> -->
-
+  
    
   
 
@@ -2829,10 +2702,13 @@
                 
                 // دالة لتحريك الكاروسيل
                 function moveMobileCarousel(index) {
-                    mobileCarousel.scrollTo({
-                        left: index * itemWidth,
-                        behavior: 'smooth'
+                    // إغلاق أي كارد مقلوب قبل الانتقال
+                    mobileCarouselItems.forEach(card => {
+                        card.classList.remove('flipped');
                     });
+                    
+                    // الانتقال الفوري بدون تأخير
+                    mobileCarousel.scrollLeft = index * itemWidth;
                     currentIndex = index;
                 }
                 
@@ -2852,7 +2728,14 @@
                 
                 // كشف التمرير التلقائي
                 mobileCarousel.addEventListener('scroll', function() {
-                    currentIndex = Math.round(mobileCarousel.scrollLeft / itemWidth);
+                    const newIndex = Math.round(mobileCarousel.scrollLeft / itemWidth);
+                    // إذا تغير الكارد، إغلاق أي كارد مقلوب
+                    if (newIndex !== currentIndex) {
+                        mobileCarouselItems.forEach(card => {
+                            card.classList.remove('flipped');
+                        });
+                        currentIndex = newIndex;
+                    }
                 });
                 
                 // تأثير اللمس للموبايل
@@ -2869,12 +2752,19 @@
                     const x = e.touches[0].pageX - mobileCarousel.offsetLeft;
                     const walk = (x - startX) * 2;
                     mobileCarousel.scrollLeft = scrollLeft - walk;
+                    
+                    // إغلاق أي كارد مقلوب أثناء السكرول
+                    const currentScrollIndex = Math.round(mobileCarousel.scrollLeft / itemWidth);
+                    if (currentScrollIndex !== currentIndex) {
+                        mobileCarouselItems.forEach(card => {
+                            card.classList.remove('flipped');
+                        });
+                    }
                 });
                 
                 // إضافة وظيفة الـ flip عند الضغط على الكروت
                 mobileCarouselItems.forEach((item, index) => {
                     item.addEventListener('click', function(e) {
-                        e.preventDefault();
                         e.stopPropagation();
                         
                         // التحقق من أن الكرت ليس مقلوب بالفعل
@@ -2887,6 +2777,9 @@
                             mobileCarouselItems.forEach(card => {
                                 card.classList.remove('flipped');
                             });
+                            
+                            // تحديث الفهرس الحالي
+                            currentIndex = index;
                             
                             // إضافة الـ flipped للكرت المضغوط
                             this.classList.add('flipped');
