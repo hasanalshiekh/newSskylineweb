@@ -1,12 +1,16 @@
 # Scratchpad
 
-## Current Task: Fix Accessibility Panel HTML and Change Color to Red
+## Current Task: Update ISO 21001 Card Icon
 
-### Task Progress:
-- [x] Fix corrupted HTML structure in accessibility panel
-- [x] Change accessibility header color to red
-- [x] Align X button with Accessibility text on same level
-- [x] Test the changes and ensure proper functionality
+### Task Description:
+- Adjust the icon in the ISO 21001 card so it matches the educational theme.
+
+### Plan & Progress:
+- [x] Review current scratchpad context and capture task details
+- [x] Inspect `iso-consulting.html` card markup near ISO 21001
+- [x] Select a more appropriate education-related icon (`fas fa-graduation-cap`)
+- [x] Update the HTML icon markup
+- [x] Verify the updated icon appears correctly (manual review of markup)
 
 ### Previous Task: Fix All Accessibility Code - إصلاح جميع كود إمكانية الوصول
 
