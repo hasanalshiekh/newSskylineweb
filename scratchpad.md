@@ -1,16 +1,18 @@
 # Scratchpad
 
-## Current Task: Update ISO 21001 Card Icon
+## Current Task: Merge `feature/update-iso-icon` into `main`
 
 ### Task Description:
-- Adjust the icon in the ISO 21001 card so it matches the educational theme.
+- Bring all updates from `feature/update-iso-icon` branch into `main` to keep primary branch up to date.
 
 ### Plan & Progress:
-- [x] Review current scratchpad context and capture task details
-- [x] Inspect `iso-consulting.html` card markup near ISO 21001
-- [x] Select a more appropriate education-related icon (`fas fa-graduation-cap`)
-- [x] Update the HTML icon markup
-- [x] Verify the updated icon appears correctly (manual review of markup)
+- [x] Create task branch `chore/merge-iso-icon`
+- [x] Review differences between `feature/update-iso-icon` and `main`
+- [x] Merge or cherry-pick changes into current branch
+- [x] Resolve any conflicts and verify files
+- [x] Run relevant checks/tests (no automated tests available; manual verification)
+- [x] Commit merge results (fast-forwarded `main` to `feature/update-iso-icon`)
+- [x] Prepare PR targeting `main` (not applicable after fast-forward; main already updated)
 
 ### Previous Task: Fix All Accessibility Code - إصلاح جميع كود إمكانية الوصول
 
